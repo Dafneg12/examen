@@ -11,5 +11,12 @@ namespace examen
         {
 
         }
+
+        private void btnGestionResidentes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            crud gestionResidentes = new crud();
+            gestionResidentes.ShowDialog();
+        }
     }
 }
