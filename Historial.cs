@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace examen
 {
-    public partial class crud : Form
+    public partial class Historial : Form
     {
-        public crud()
+        public Historial()
         {
             InitializeComponent();
         }
@@ -31,11 +31,11 @@ namespace examen
             principal.ShowDialog();
         }
 
-        private void btnHistorial_Click(object sender, EventArgs e)
+        private void btnGestionRes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Historial hist = new Historial();
-            hist.ShowDialog();
+            crud c = new crud();
+            c.ShowDialog();
         }
     }
 }

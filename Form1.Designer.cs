@@ -28,107 +28,161 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel2 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
-            btnHistorialAccesos = new Button();
-            btnGestionResidentes = new Button();
-            btnAcceso = new Button();
-            btnInicio = new Button();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            cboGuardia = new ComboBox();
+            label2 = new Label();
+            btnAccesoPrincipal = new Buttons();
+            btnGestionResidentes = new Buttons();
+            btnHistorial = new Buttons();
+            pictureBox1 = new PictureBox();
+            lblFecha = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(106, 156, 253);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(872, 53);
-            panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.LightSteelBlue;
-            panel2.Controls.Add(btnHistorialAccesos);
-            panel2.Controls.Add(btnGestionResidentes);
-            panel2.Controls.Add(btnAcceso);
-            panel2.Controls.Add(btnInicio);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 53);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(191, 444);
-            panel2.TabIndex = 2;
             // 
             // label1
             // 
-            label1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
+            label1.Font = new Font("Candara", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(3, 52, 149);
+            label1.Location = new Point(198, 29);
             label1.Name = "label1";
-            label1.Size = new Size(179, 31);
-            label1.TabIndex = 3;
-            label1.Text = "Residecia arboledas";
+            label1.Size = new Size(189, 53);
+            label1.TabIndex = 0;
+            label1.Text = "Bienvenidos";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnHistorialAccesos
+            // cboGuardia
             // 
-            btnHistorialAccesos.Location = new Point(4, 288);
-            btnHistorialAccesos.Name = "btnHistorialAccesos";
-            btnHistorialAccesos.Size = new Size(180, 92);
-            btnHistorialAccesos.TabIndex = 7;
-            btnHistorialAccesos.Text = "Historial de accesos";
-            btnHistorialAccesos.UseVisualStyleBackColor = true;
+            cboGuardia.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cboGuardia.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboGuardia.FormattingEnabled = true;
+            cboGuardia.ItemHeight = 15;
+            cboGuardia.Location = new Point(242, 108);
+            cboGuardia.Name = "cboGuardia";
+            cboGuardia.Size = new Size(197, 23);
+            cboGuardia.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(3, 52, 149);
+            label2.Location = new Point(118, 101);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 31);
+            label2.TabIndex = 2;
+            label2.Text = "Guardia";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnAccesoPrincipal
+            // 
+            btnAccesoPrincipal.BackColor = Color.FromArgb(106, 156, 253);
+            btnAccesoPrincipal.BackgroundColor = Color.FromArgb(106, 156, 253);
+            btnAccesoPrincipal.BorderColor = Color.PaleVioletRed;
+            btnAccesoPrincipal.BorderRadius = 20;
+            btnAccesoPrincipal.BorderSize = 0;
+            btnAccesoPrincipal.FlatAppearance.BorderSize = 0;
+            btnAccesoPrincipal.FlatStyle = FlatStyle.Flat;
+            btnAccesoPrincipal.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAccesoPrincipal.ForeColor = Color.White;
+            btnAccesoPrincipal.Location = new Point(189, 176);
+            btnAccesoPrincipal.Name = "btnAccesoPrincipal";
+            btnAccesoPrincipal.Size = new Size(227, 49);
+            btnAccesoPrincipal.TabIndex = 3;
+            btnAccesoPrincipal.Text = "Acceso Principal";
+            btnAccesoPrincipal.TextColor = Color.White;
+            btnAccesoPrincipal.UseVisualStyleBackColor = false;
+            btnAccesoPrincipal.Click += btnAccesoPrincipal_Click;
             // 
             // btnGestionResidentes
             // 
-            btnGestionResidentes.Location = new Point(5, 193);
+            btnGestionResidentes.BackColor = Color.FromArgb(106, 156, 253);
+            btnGestionResidentes.BackgroundColor = Color.FromArgb(106, 156, 253);
+            btnGestionResidentes.BorderColor = Color.PaleVioletRed;
+            btnGestionResidentes.BorderRadius = 20;
+            btnGestionResidentes.BorderSize = 0;
+            btnGestionResidentes.FlatAppearance.BorderSize = 0;
+            btnGestionResidentes.FlatStyle = FlatStyle.Flat;
+            btnGestionResidentes.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGestionResidentes.ForeColor = Color.White;
+            btnGestionResidentes.Location = new Point(189, 255);
             btnGestionResidentes.Name = "btnGestionResidentes";
-            btnGestionResidentes.Size = new Size(180, 92);
-            btnGestionResidentes.TabIndex = 6;
-            btnGestionResidentes.Text = "Gestion de residentes";
-            btnGestionResidentes.UseVisualStyleBackColor = true;
-            btnGestionResidentes.Click += btnGestionResidentes_Click;
+            btnGestionResidentes.Size = new Size(227, 49);
+            btnGestionResidentes.TabIndex = 4;
+            btnGestionResidentes.Text = "Gestión de residentes";
+            btnGestionResidentes.TextColor = Color.White;
+            btnGestionResidentes.UseVisualStyleBackColor = false;
+            btnGestionResidentes.Click += btnGestionResidentes_Click_1;
             // 
-            // btnAcceso
+            // btnHistorial
             // 
-            btnAcceso.Location = new Point(5, 98);
-            btnAcceso.Name = "btnAcceso";
-            btnAcceso.Size = new Size(180, 92);
-            btnAcceso.TabIndex = 5;
-            btnAcceso.Text = "Panel de acceso principal";
-            btnAcceso.UseVisualStyleBackColor = true;
+            btnHistorial.BackColor = Color.FromArgb(106, 156, 253);
+            btnHistorial.BackgroundColor = Color.FromArgb(106, 156, 253);
+            btnHistorial.BorderColor = Color.PaleVioletRed;
+            btnHistorial.BorderRadius = 20;
+            btnHistorial.BorderSize = 0;
+            btnHistorial.FlatAppearance.BorderSize = 0;
+            btnHistorial.FlatStyle = FlatStyle.Flat;
+            btnHistorial.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHistorial.ForeColor = Color.White;
+            btnHistorial.Location = new Point(189, 337);
+            btnHistorial.Name = "btnHistorial";
+            btnHistorial.Size = new Size(227, 49);
+            btnHistorial.TabIndex = 5;
+            btnHistorial.Text = "Historial de accesos";
+            btnHistorial.TextColor = Color.White;
+            btnHistorial.UseVisualStyleBackColor = false;
+            btnHistorial.Click += btnHistorial_Click;
             // 
-            // btnInicio
+            // pictureBox1
             // 
-            btnInicio.Location = new Point(5, 4);
-            btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(180, 92);
-            btnInicio.TabIndex = 4;
-            btnInicio.Text = "Inicio";
-            btnInicio.UseVisualStyleBackColor = true;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(51, 52);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFecha.ForeColor = Color.FromArgb(3, 52, 149);
+            lblFecha.Location = new Point(447, 9);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(38, 15);
+            lblFecha.TabIndex = 7;
+            lblFecha.Text = "fecha";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(872, 497);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            BackColor = Color.GhostWhite;
+            ClientSize = new Size(602, 447);
+            Controls.Add(lblFecha);
+            Controls.Add(pictureBox1);
+            Controls.Add(btnHistorial);
+            Controls.Add(btnGestionResidentes);
+            Controls.Add(btnAccesoPrincipal);
+            Controls.Add(label2);
+            Controls.Add(cboGuardia);
+            Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
-            Text = "Form1";
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private Panel panel1;
-        private Panel panel2;
+
         private Label label1;
-        private Button btnHistorialAccesos;
-        private Button btnGestionResidentes;
-        private Button btnAcceso;
-        private Button btnInicio;
+        private ComboBox cboGuardia;
+        private Label label2;
+        private Buttons btnAccesoPrincipal;
+        private Buttons btnGestionResidentes;
+        private Buttons btnHistorial;
+        private PictureBox pictureBox1;
+        private Label lblFecha;
     }
 }

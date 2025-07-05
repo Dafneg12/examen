@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace examen
 {
-    public partial class crud : Form
+    public partial class AccesoPrincipal : Form
     {
-        public crud()
+        public AccesoPrincipal()
         {
             InitializeComponent();
+            lblFecha.Text = DateTime.Now.ToString();
         }
 
         private void btnInicios_Click(object sender, EventArgs e)
@@ -24,18 +25,19 @@ namespace examen
             form1.ShowDialog();
         }
 
-        private void btnAccesoPrin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AccesoPrincipal principal = new AccesoPrincipal();
-            principal.ShowDialog();
-        }
-
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             this.Hide();
             Historial hist = new Historial();
             hist.ShowDialog();
+
+        }
+
+        private void btnGestionRes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            crud crud = new crud();
+            crud.ShowDialog();
         }
     }
 }
