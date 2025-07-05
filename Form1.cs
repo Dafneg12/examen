@@ -1,3 +1,7 @@
+using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Drawing;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace examen
 {
     public partial class Form1 : Form
@@ -5,12 +9,38 @@ namespace examen
         public Form1()
         {
             InitializeComponent();
-            lblFecha.Text = DateTime.Now.ToString();
+            //lblFecha.Text = DateTime.Now.ToString();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void CargarComboBox()
+        {
+            string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
+            string query = "SELECT guardiaID, nombre FROM Guardias";
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+
+                DataRow fila = dt.NewRow();
+                fila["guardiaID"] = 0; 
+                fila["nombre"] = "Seleccione el guardia";
+                dt.Rows.InsertAt(fila, 0);
+
+                cboGuardia.DisplayMember = "nombre"; 
+                cboGuardia.ValueMember = "guardiaID";       
+                cboGuardia.DataSource = dt;
+            }
         }
 
 
@@ -34,6 +64,12 @@ namespace examen
             this.Hide();
             Historial hist = new Historial();
             hist.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CargarComboBox();
+            lblFecha.Text = DateTime.Now.ToString();
         }
     }
 }
