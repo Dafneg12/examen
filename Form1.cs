@@ -27,7 +27,7 @@ namespace examen
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader(); //new
 
                 DataTable dt = new DataTable();
                 dt.Load(reader);
