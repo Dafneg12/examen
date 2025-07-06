@@ -37,7 +37,7 @@
             txtApellidoPaterno = new TextBox();
             panel4 = new Panel();
             txtApellidoMaterno = new TextBox();
-            buttons1 = new Buttons();
+            btnCrear = new Buttons();
             txtIdResidente = new TextBox();
             panel5 = new Panel();
             txtTelefono = new TextBox();
@@ -159,24 +159,25 @@
             txtApellidoMaterno.TabIndex = 9;
             txtApellidoMaterno.Text = "Apellido materno";
             // 
-            // buttons1
+            // btnCrear
             // 
-            buttons1.BackColor = Color.FromArgb(202, 111, 150);
-            buttons1.BackgroundColor = Color.FromArgb(202, 111, 150);
-            buttons1.BorderColor = Color.PaleVioletRed;
-            buttons1.BorderRadius = 20;
-            buttons1.BorderSize = 0;
-            buttons1.FlatAppearance.BorderSize = 0;
-            buttons1.FlatStyle = FlatStyle.Flat;
-            buttons1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttons1.ForeColor = Color.White;
-            buttons1.Location = new Point(168, 812);
-            buttons1.Name = "buttons1";
-            buttons1.Size = new Size(128, 51);
-            buttons1.TabIndex = 11;
-            buttons1.Text = "Crear";
-            buttons1.TextColor = Color.White;
-            buttons1.UseVisualStyleBackColor = false;
+            btnCrear.BackColor = Color.FromArgb(202, 111, 150);
+            btnCrear.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnCrear.BorderColor = Color.PaleVioletRed;
+            btnCrear.BorderRadius = 20;
+            btnCrear.BorderSize = 0;
+            btnCrear.FlatAppearance.BorderSize = 0;
+            btnCrear.FlatStyle = FlatStyle.Flat;
+            btnCrear.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCrear.ForeColor = Color.White;
+            btnCrear.Location = new Point(168, 812);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new Size(128, 51);
+            btnCrear.TabIndex = 11;
+            btnCrear.Text = "Crear";
+            btnCrear.TextColor = Color.White;
+            btnCrear.UseVisualStyleBackColor = false;
+            btnCrear.Click += btnCrear_Click;
             // 
             // txtIdResidente
             // 
@@ -349,11 +350,10 @@
             ClientSize = new Size(488, 872);
             Controls.Add(panel9);
             Controls.Add(panel8);
-            Controls.Add(buttons1);
+            Controls.Add(btnCrear);
             Controls.Add(panel1);
             Name = "crearResidentes";
             Text = "crearResidentes";
-            Load += crearResidentes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel8.ResumeLayout(false);
@@ -373,7 +373,7 @@
         private TextBox txtApellidoPaterno;
         private Panel panel4;
         private TextBox txtApellidoMaterno;
-        private Buttons buttons1;
+        private Buttons btnCrear;
         private Button btnRegresar;
         private TextBox txtIdResidente;
         private Panel panel5;
