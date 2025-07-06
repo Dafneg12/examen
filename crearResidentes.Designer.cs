@@ -31,15 +31,23 @@
             panel1 = new Panel();
             btnRegresar = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtNombreR = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            textBox2 = new TextBox();
+            txtApellidoPaterno = new TextBox();
             panel4 = new Panel();
-            textBox3 = new TextBox();
+            txtApellidoMaterno = new TextBox();
             buttons1 = new Buttons();
-            comboBox1 = new ComboBox();
+            txtIdResidente = new TextBox();
+            panel5 = new Panel();
+            txtTelefono = new TextBox();
+            panel6 = new Panel();
+            txtNumero = new TextBox();
+            panel7 = new Panel();
+            txtCalle = new TextBox();
+            panel8 = new Panel();
             panel1.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -50,7 +58,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(458, 60);
+            panel1.Size = new Size(1025, 60);
             panel1.TabIndex = 4;
             // 
             // btnRegresar
@@ -78,22 +86,22 @@
             label1.TabIndex = 0;
             label1.Text = "Residencia arboledas";
             // 
-            // textBox1
+            // txtNombreR
             // 
-            textBox1.BackColor = Color.FromArgb(254, 229, 225);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(47, 107);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(372, 41);
-            textBox1.TabIndex = 5;
-            textBox1.Text = "Nombre";
+            txtNombreR.BackColor = Color.FromArgb(254, 229, 225);
+            txtNombreR.BorderStyle = BorderStyle.None;
+            txtNombreR.Location = new Point(47, 93);
+            txtNombreR.Multiline = true;
+            txtNombreR.Name = "txtNombreR";
+            txtNombreR.Size = new Size(372, 41);
+            txtNombreR.TabIndex = 5;
+            txtNombreR.Text = "Nombre";
             // 
             // panel2
             // 
             panel2.BackColor = SystemColors.ControlDark;
             panel2.ForeColor = SystemColors.ControlLight;
-            panel2.Location = new Point(47, 151);
+            panel2.Location = new Point(47, 137);
             panel2.Name = "panel2";
             panel2.Size = new Size(372, 1);
             panel2.TabIndex = 6;
@@ -102,41 +110,41 @@
             // 
             panel3.BackColor = SystemColors.ControlDark;
             panel3.ForeColor = SystemColors.ControlLight;
-            panel3.Location = new Point(47, 245);
+            panel3.Location = new Point(47, 210);
             panel3.Name = "panel3";
             panel3.Size = new Size(372, 1);
             panel3.TabIndex = 8;
             // 
-            // textBox2
+            // txtApellidoPaterno
             // 
-            textBox2.BackColor = Color.FromArgb(254, 229, 225);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(47, 201);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(372, 41);
-            textBox2.TabIndex = 7;
-            textBox2.Text = "Apellidos";
+            txtApellidoPaterno.BackColor = Color.FromArgb(254, 229, 225);
+            txtApellidoPaterno.BorderStyle = BorderStyle.None;
+            txtApellidoPaterno.Location = new Point(47, 166);
+            txtApellidoPaterno.Multiline = true;
+            txtApellidoPaterno.Name = "txtApellidoPaterno";
+            txtApellidoPaterno.Size = new Size(372, 41);
+            txtApellidoPaterno.TabIndex = 7;
+            txtApellidoPaterno.Text = "Apellido paterno";
             // 
             // panel4
             // 
             panel4.BackColor = SystemColors.ControlDark;
             panel4.ForeColor = SystemColors.ControlLight;
-            panel4.Location = new Point(47, 340);
+            panel4.Location = new Point(47, 284);
             panel4.Name = "panel4";
             panel4.Size = new Size(372, 1);
             panel4.TabIndex = 10;
             // 
-            // textBox3
+            // txtApellidoMaterno
             // 
-            textBox3.BackColor = Color.FromArgb(254, 229, 225);
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(47, 296);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(372, 41);
-            textBox3.TabIndex = 9;
-            textBox3.Text = "Telefono";
+            txtApellidoMaterno.BackColor = Color.FromArgb(254, 229, 225);
+            txtApellidoMaterno.BorderStyle = BorderStyle.None;
+            txtApellidoMaterno.Location = new Point(47, 240);
+            txtApellidoMaterno.Multiline = true;
+            txtApellidoMaterno.Name = "txtApellidoMaterno";
+            txtApellidoMaterno.Size = new Size(372, 41);
+            txtApellidoMaterno.TabIndex = 9;
+            txtApellidoMaterno.Text = "Apellido materno";
             // 
             // buttons1
             // 
@@ -149,7 +157,7 @@
             buttons1.FlatStyle = FlatStyle.Flat;
             buttons1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttons1.ForeColor = Color.White;
-            buttons1.Location = new Point(158, 457);
+            buttons1.Location = new Point(169, 602);
             buttons1.Name = "buttons1";
             buttons1.Size = new Size(128, 51);
             buttons1.TabIndex = 11;
@@ -157,51 +165,131 @@
             buttons1.TextColor = Color.White;
             buttons1.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // txtIdResidente
             // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(47, 382);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(372, 28);
-            comboBox1.TabIndex = 12;
+            txtIdResidente.Location = new Point(47, 36);
+            txtIdResidente.Name = "txtIdResidente";
+            txtIdResidente.Size = new Size(53, 27);
+            txtIdResidente.TabIndex = 12;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = SystemColors.ControlDark;
+            panel5.ForeColor = SystemColors.ControlLight;
+            panel5.Location = new Point(47, 491);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(372, 1);
+            panel5.TabIndex = 18;
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.BackColor = Color.FromArgb(254, 229, 225);
+            txtTelefono.BorderStyle = BorderStyle.None;
+            txtTelefono.Location = new Point(47, 447);
+            txtTelefono.Multiline = true;
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(372, 41);
+            txtTelefono.TabIndex = 17;
+            txtTelefono.Text = "Telefono";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = SystemColors.ControlDark;
+            panel6.ForeColor = SystemColors.ControlLight;
+            panel6.Location = new Point(47, 423);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(372, 1);
+            panel6.TabIndex = 16;
+            // 
+            // txtNumero
+            // 
+            txtNumero.BackColor = Color.FromArgb(254, 229, 225);
+            txtNumero.BorderStyle = BorderStyle.None;
+            txtNumero.Location = new Point(47, 379);
+            txtNumero.Multiline = true;
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(372, 41);
+            txtNumero.TabIndex = 15;
+            txtNumero.Text = "Numero";
+            // 
+            // panel7
+            // 
+            panel7.BackColor = SystemColors.ControlDark;
+            panel7.ForeColor = SystemColors.ControlLight;
+            panel7.Location = new Point(47, 353);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(372, 1);
+            panel7.TabIndex = 14;
+            // 
+            // txtCalle
+            // 
+            txtCalle.BackColor = Color.FromArgb(254, 229, 225);
+            txtCalle.BorderStyle = BorderStyle.None;
+            txtCalle.Location = new Point(47, 309);
+            txtCalle.Multiline = true;
+            txtCalle.Name = "txtCalle";
+            txtCalle.Size = new Size(372, 41);
+            txtCalle.TabIndex = 13;
+            txtCalle.Text = "Calle";
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(txtNumero);
+            panel8.Controls.Add(panel5);
+            panel8.Controls.Add(txtNombreR);
+            panel8.Controls.Add(txtTelefono);
+            panel8.Controls.Add(panel2);
+            panel8.Controls.Add(panel6);
+            panel8.Controls.Add(txtApellidoPaterno);
+            panel8.Controls.Add(panel3);
+            panel8.Controls.Add(panel7);
+            panel8.Controls.Add(txtApellidoMaterno);
+            panel8.Controls.Add(txtCalle);
+            panel8.Controls.Add(panel4);
+            panel8.Controls.Add(txtIdResidente);
+            panel8.Location = new Point(412, 76);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(523, 536);
+            panel8.TabIndex = 19;
             // 
             // crearResidentes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(254, 229, 225);
-            ClientSize = new Size(458, 564);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(1025, 687);
+            Controls.Add(panel8);
             Controls.Add(buttons1);
-            Controls.Add(panel4);
-            Controls.Add(textBox3);
-            Controls.Add(panel3);
-            Controls.Add(textBox2);
-            Controls.Add(panel2);
-            Controls.Add(textBox1);
             Controls.Add(panel1);
             Name = "crearResidentes";
             Text = "crearResidentes";
             Load += crearResidentes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel panel1;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtNombreR;
         private Panel panel2;
         private Panel panel3;
-        private TextBox textBox2;
+        private TextBox txtApellidoPaterno;
         private Panel panel4;
-        private TextBox textBox3;
+        private TextBox txtApellidoMaterno;
         private Buttons buttons1;
         private Button btnRegresar;
-        private ComboBox comboBox1;
+        private TextBox txtIdResidente;
+        private Panel panel5;
+        private TextBox txtTelefono;
+        private Panel panel6;
+        private TextBox txtNumero;
+        private Panel panel7;
+        private TextBox txtCalle;
+        private Panel panel8;
     }
 }

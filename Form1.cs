@@ -21,7 +21,9 @@ namespace examen
         {
             string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
 
+
             string query = "SELECT id_guardia, nombre FROM Guardias";
+
 
             
             using (SqlConnection conn = new SqlConnection(connectionString))
