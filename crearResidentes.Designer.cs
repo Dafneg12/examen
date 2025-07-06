@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnRegresar = new Button();
             label1 = new Label();
             textBox1 = new TextBox();
             panel2 = new Panel();
@@ -37,7 +38,7 @@
             panel4 = new Panel();
             textBox3 = new TextBox();
             buttons1 = new Buttons();
-            btnRegresar = new Button();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,6 +52,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(458, 60);
             panel1.TabIndex = 4;
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.AutoSize = true;
+            btnRegresar.BackColor = Color.FromArgb(235, 141, 181);
+            btnRegresar.FlatStyle = FlatStyle.Flat;
+            btnRegresar.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegresar.ForeColor = Color.White;
+            btnRegresar.Location = new Point(0, 0);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(55, 60);
+            btnRegresar.TabIndex = 1;
+            btnRegresar.Text = "<";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // label1
             // 
@@ -66,7 +82,7 @@
             // 
             textBox1.BackColor = Color.FromArgb(254, 229, 225);
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(49, 134);
+            textBox1.Location = new Point(47, 107);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(372, 41);
@@ -77,7 +93,7 @@
             // 
             panel2.BackColor = SystemColors.ControlDark;
             panel2.ForeColor = SystemColors.ControlLight;
-            panel2.Location = new Point(49, 181);
+            panel2.Location = new Point(47, 151);
             panel2.Name = "panel2";
             panel2.Size = new Size(372, 1);
             panel2.TabIndex = 6;
@@ -86,7 +102,7 @@
             // 
             panel3.BackColor = SystemColors.ControlDark;
             panel3.ForeColor = SystemColors.ControlLight;
-            panel3.Location = new Point(49, 275);
+            panel3.Location = new Point(47, 245);
             panel3.Name = "panel3";
             panel3.Size = new Size(372, 1);
             panel3.TabIndex = 8;
@@ -95,7 +111,7 @@
             // 
             textBox2.BackColor = Color.FromArgb(254, 229, 225);
             textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(49, 228);
+            textBox2.Location = new Point(47, 201);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(372, 41);
@@ -106,7 +122,7 @@
             // 
             panel4.BackColor = SystemColors.ControlDark;
             panel4.ForeColor = SystemColors.ControlLight;
-            panel4.Location = new Point(49, 370);
+            panel4.Location = new Point(47, 340);
             panel4.Name = "panel4";
             panel4.Size = new Size(372, 1);
             panel4.TabIndex = 10;
@@ -115,7 +131,7 @@
             // 
             textBox3.BackColor = Color.FromArgb(254, 229, 225);
             textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(49, 323);
+            textBox3.Location = new Point(47, 296);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(372, 41);
@@ -133,7 +149,7 @@
             buttons1.FlatStyle = FlatStyle.Flat;
             buttons1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttons1.ForeColor = Color.White;
-            buttons1.Location = new Point(161, 423);
+            buttons1.Location = new Point(158, 457);
             buttons1.Name = "buttons1";
             buttons1.Size = new Size(128, 51);
             buttons1.TabIndex = 11;
@@ -141,20 +157,14 @@
             buttons1.TextColor = Color.White;
             buttons1.UseVisualStyleBackColor = false;
             // 
-            // btnRegresar
+            // comboBox1
             // 
-            btnRegresar.AutoSize = true;
-            btnRegresar.BackColor = Color.FromArgb(235, 141, 181);
-            btnRegresar.FlatStyle = FlatStyle.Flat;
-            btnRegresar.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegresar.ForeColor = Color.White;
-            btnRegresar.Location = new Point(0, 0);
-            btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(55, 60);
-            btnRegresar.TabIndex = 1;
-            btnRegresar.Text = "<";
-            btnRegresar.UseVisualStyleBackColor = false;
-            btnRegresar.Click += btnRegresar_Click;
+            comboBox1.FlatStyle = FlatStyle.Flat;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(47, 382);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(372, 28);
+            comboBox1.TabIndex = 12;
             // 
             // crearResidentes
             // 
@@ -162,6 +172,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(254, 229, 225);
             ClientSize = new Size(458, 564);
+            Controls.Add(comboBox1);
             Controls.Add(buttons1);
             Controls.Add(panel4);
             Controls.Add(textBox3);
@@ -191,5 +202,6 @@
         private TextBox textBox3;
         private Buttons buttons1;
         private Button btnRegresar;
+        private ComboBox comboBox1;
     }
 }

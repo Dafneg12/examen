@@ -63,9 +63,8 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(763, 48);
+            panel1.Size = new Size(872, 64);
             panel1.TabIndex = 4;
             // 
             // lblFecha
@@ -73,9 +72,9 @@
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFecha.ForeColor = SystemColors.ControlLightLight;
-            lblFecha.Location = new Point(604, 14);
+            lblFecha.Location = new Point(690, 19);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(43, 18);
+            lblFecha.Size = new Size(54, 23);
             lblFecha.TabIndex = 6;
             lblFecha.Text = "fecha";
             // 
@@ -83,9 +82,9 @@
             // 
             label1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(14, 12);
             label1.Name = "label1";
-            label1.Size = new Size(150, 26);
+            label1.Size = new Size(228, 35);
             label1.TabIndex = 0;
             label1.Text = "Residecia arboledas";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,10 +97,9 @@
             panel2.Controls.Add(btnAccesoPrin);
             panel2.Controls.Add(btnInicios);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 48);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(194, 335);
+            panel2.Size = new Size(222, 447);
             panel2.TabIndex = 5;
             // 
             // btnHistorial
@@ -115,9 +113,10 @@
             btnHistorial.FlatStyle = FlatStyle.Flat;
             btnHistorial.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHistorial.ForeColor = Color.White;
-            btnHistorial.Location = new Point(23, 256);
+            btnHistorial.Location = new Point(26, 341);
+            btnHistorial.Margin = new Padding(3, 4, 3, 4);
             btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new Size(139, 47);
+            btnHistorial.Size = new Size(159, 63);
             btnHistorial.TabIndex = 7;
             btnHistorial.Text = "Historial de accesos";
             btnHistorial.TextColor = Color.White;
@@ -135,9 +134,10 @@
             btnGestionRes.FlatStyle = FlatStyle.Flat;
             btnGestionRes.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionRes.ForeColor = Color.White;
-            btnGestionRes.Location = new Point(23, 180);
+            btnGestionRes.Location = new Point(26, 240);
+            btnGestionRes.Margin = new Padding(3, 4, 3, 4);
             btnGestionRes.Name = "btnGestionRes";
-            btnGestionRes.Size = new Size(139, 45);
+            btnGestionRes.Size = new Size(159, 60);
             btnGestionRes.TabIndex = 7;
             btnGestionRes.Text = "Gestión de residentes";
             btnGestionRes.TextColor = Color.White;
@@ -155,9 +155,10 @@
             btnAccesoPrin.FlatStyle = FlatStyle.Flat;
             btnAccesoPrin.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccesoPrin.ForeColor = Color.White;
-            btnAccesoPrin.Location = new Point(23, 115);
+            btnAccesoPrin.Location = new Point(26, 153);
+            btnAccesoPrin.Margin = new Padding(3, 4, 3, 4);
             btnAccesoPrin.Name = "btnAccesoPrin";
-            btnAccesoPrin.Size = new Size(139, 41);
+            btnAccesoPrin.Size = new Size(159, 55);
             btnAccesoPrin.TabIndex = 7;
             btnAccesoPrin.Text = "Acceso principal";
             btnAccesoPrin.TextColor = Color.White;
@@ -174,9 +175,10 @@
             btnInicios.FlatStyle = FlatStyle.Flat;
             btnInicios.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicios.ForeColor = Color.White;
-            btnInicios.Location = new Point(23, 45);
+            btnInicios.Location = new Point(26, 60);
+            btnInicios.Margin = new Padding(3, 4, 3, 4);
             btnInicios.Name = "btnInicios";
-            btnInicios.Size = new Size(139, 41);
+            btnInicios.Size = new Size(159, 55);
             btnInicios.TabIndex = 6;
             btnInicios.Text = "Inicio";
             btnInicios.TextColor = Color.White;
@@ -188,17 +190,18 @@
             label2.AutoSize = true;
             label2.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(3, 52, 149);
-            label2.Location = new Point(229, 79);
+            label2.Location = new Point(262, 105);
             label2.Name = "label2";
-            label2.Size = new Size(125, 19);
+            label2.Size = new Size(155, 24);
             label2.TabIndex = 6;
             label2.Text = "Ingrese el codigo";
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(380, 79);
+            txtCodigo.Location = new Point(434, 105);
+            txtCodigo.Margin = new Padding(3, 4, 3, 4);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(192, 23);
+            txtCodigo.Size = new Size(219, 27);
             txtCodigo.TabIndex = 7;
             // 
             // panel3
@@ -210,39 +213,43 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(lblTipo);
-            panel3.Location = new Point(229, 142);
+            panel3.Location = new Point(262, 189);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(228, 209);
+            panel3.Size = new Size(261, 279);
             panel3.TabIndex = 9;
             // 
             // txtInvitado
             // 
-            txtInvitado.Location = new Point(88, 149);
+            txtInvitado.Location = new Point(101, 199);
+            txtInvitado.Margin = new Padding(3, 4, 3, 4);
             txtInvitado.Name = "txtInvitado";
-            txtInvitado.Size = new Size(118, 23);
+            txtInvitado.Size = new Size(134, 27);
             txtInvitado.TabIndex = 6;
             txtInvitado.Visible = false;
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(88, 106);
+            txtApellidos.Location = new Point(101, 141);
+            txtApellidos.Margin = new Padding(3, 4, 3, 4);
             txtApellidos.Name = "txtApellidos";
-            txtApellidos.Size = new Size(118, 23);
+            txtApellidos.Size = new Size(134, 27);
             txtApellidos.TabIndex = 5;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(88, 61);
+            txtNombre.Location = new Point(101, 81);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(118, 23);
+            txtNombre.Size = new Size(134, 27);
             txtNombre.TabIndex = 4;
             // 
             // lblInvitado
             // 
             lblInvitado.AutoSize = true;
-            lblInvitado.Location = new Point(13, 157);
+            lblInvitado.Location = new Point(15, 209);
             lblInvitado.Name = "lblInvitado";
-            lblInvitado.Size = new Size(69, 15);
+            lblInvitado.Size = new Size(87, 20);
             lblInvitado.TabIndex = 3;
             lblInvitado.Text = "Invitado de:";
             lblInvitado.Visible = false;
@@ -250,27 +257,27 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 109);
+            label4.Location = new Point(21, 145);
             label4.Name = "label4";
-            label4.Size = new Size(62, 15);
+            label4.Size = new Size(79, 20);
             label4.TabIndex = 2;
             label4.Text = "Apellidos: ";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(18, 64);
+            label3.Location = new Point(21, 85);
             label3.Name = "label3";
-            label3.Size = new Size(54, 15);
+            label3.Size = new Size(67, 20);
             label3.TabIndex = 1;
             label3.Text = "Nombre:";
             // 
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(49, 26);
+            lblTipo.Location = new Point(56, 35);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(111, 15);
+            lblTipo.Size = new Size(141, 20);
             lblTipo.TabIndex = 0;
             lblTipo.Text = "Invitado o residente";
             // 
@@ -278,9 +285,10 @@
             // 
             panel4.Controls.Add(btnSalida);
             panel4.Controls.Add(btnEntrada);
-            panel4.Location = new Point(517, 142);
+            panel4.Location = new Point(591, 189);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(200, 209);
+            panel4.Size = new Size(229, 279);
             panel4.TabIndex = 10;
             // 
             // btnSalida
@@ -294,9 +302,10 @@
             btnSalida.FlatStyle = FlatStyle.Flat;
             btnSalida.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalida.ForeColor = Color.FromArgb(3, 52, 149);
-            btnSalida.Location = new Point(20, 109);
+            btnSalida.Location = new Point(23, 145);
+            btnSalida.Margin = new Padding(3, 4, 3, 4);
             btnSalida.Name = "btnSalida";
-            btnSalida.Size = new Size(150, 40);
+            btnSalida.Size = new Size(171, 53);
             btnSalida.TabIndex = 1;
             btnSalida.Text = "Registrar salida";
             btnSalida.TextColor = Color.FromArgb(3, 52, 149);
@@ -313,9 +322,10 @@
             btnEntrada.FlatStyle = FlatStyle.Flat;
             btnEntrada.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrada.ForeColor = Color.FromArgb(3, 52, 149);
-            btnEntrada.Location = new Point(20, 39);
+            btnEntrada.Location = new Point(23, 52);
+            btnEntrada.Margin = new Padding(3, 4, 3, 4);
             btnEntrada.Name = "btnEntrada";
-            btnEntrada.Size = new Size(150, 40);
+            btnEntrada.Size = new Size(171, 53);
             btnEntrada.TabIndex = 0;
             btnEntrada.Text = "Registrar entrada";
             btnEntrada.TextColor = Color.FromArgb(3, 52, 149);
@@ -332,9 +342,10 @@
             buttons1.FlatStyle = FlatStyle.Flat;
             buttons1.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttons1.ForeColor = Color.White;
-            buttons1.Location = new Point(591, 70);
+            buttons1.Location = new Point(675, 93);
+            buttons1.Margin = new Padding(3, 4, 3, 4);
             buttons1.Name = "buttons1";
-            buttons1.Size = new Size(96, 39);
+            buttons1.Size = new Size(110, 52);
             buttons1.TabIndex = 11;
             buttons1.Text = "Validar codigo";
             buttons1.TextColor = Color.White;
@@ -342,9 +353,9 @@
             // 
             // AccesoPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(763, 383);
+            ClientSize = new Size(872, 511);
             Controls.Add(buttons1);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -352,6 +363,7 @@
             Controls.Add(label2);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AccesoPrincipal";
             Text = "AccesoPrincipal";
             panel1.ResumeLayout(false);
