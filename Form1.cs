@@ -22,7 +22,7 @@ namespace examen
             string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
 
 
-            string query = "SELECT id_guardia, nombre FROM Guardias";
+            string query = "SELECT id_guardia, nombre+' '+apellido_paterno +' '+ apellido_materno as nombre FROM Guardias";
 
 
             
