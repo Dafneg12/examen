@@ -50,6 +50,7 @@ namespace examen
             this.Hide();
             crud gestionResidentes = new crud();
             gestionResidentes.ShowDialog();
+            this.Close();
         }
 
         private void btnAccesoPrincipal_Click(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace examen
             this.Hide();
             AccesoPrincipal principal = new AccesoPrincipal();
             principal.ShowDialog();
+            this.Close();
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
@@ -64,6 +66,7 @@ namespace examen
             this.Hide();
             Historial hist = new Historial();
             hist.ShowDialog();
+            this.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)

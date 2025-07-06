@@ -23,6 +23,7 @@ namespace examen
             this.Hide();
             Form1 form1 = new Form1();
             form1.ShowDialog();
+            this.Close();
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace examen
             this.Hide();
             Historial hist = new Historial();
             hist.ShowDialog();
+            this.Close();
 
         }
 
@@ -38,6 +40,7 @@ namespace examen
             this.Hide();
             crud crud = new crud();
             crud.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -31,10 +31,14 @@
             label1 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
-            btnHistorial = new Buttons();
-            btnGestionRes = new Buttons();
-            btnAccesoPrin = new Buttons();
-            btnInicios = new Buttons();
+            btnGestion = new Button();
+            btnHistorial = new Button();
+            btnAccesoPrincipal = new Button();
+            btnInicio = new Button();
+            lblResidentes = new Label();
+            btnCrear = new Button();
+            btnActualizar = new Button();
+            btnEliminar = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -43,129 +47,152 @@
             // 
             label1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(8, 9);
+            label1.Location = new Point(9, 12);
             label1.Name = "label1";
-            label1.Size = new Size(157, 23);
+            label1.Size = new Size(179, 31);
             label1.TabIndex = 0;
             label1.Text = "Residecia arboledas";
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(106, 156, 253);
+            panel1.BackColor = Color.MediumVioletRed;
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(979, 45);
+            panel1.Size = new Size(1119, 60);
             panel1.TabIndex = 3;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.LightSteelBlue;
+            panel2.BackColor = Color.PaleVioletRed;
+            panel2.Controls.Add(btnGestion);
             panel2.Controls.Add(btnHistorial);
-            panel2.Controls.Add(btnGestionRes);
-            panel2.Controls.Add(btnAccesoPrin);
-            panel2.Controls.Add(btnInicios);
+            panel2.Controls.Add(btnAccesoPrincipal);
+            panel2.Controls.Add(btnInicio);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 45);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(194, 453);
+            panel2.Size = new Size(222, 604);
             panel2.TabIndex = 6;
+            // 
+            // btnGestion
+            // 
+            btnGestion.BackColor = Color.PaleVioletRed;
+            btnGestion.FlatStyle = FlatStyle.Flat;
+            btnGestion.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            btnGestion.ForeColor = Color.White;
+            btnGestion.Location = new Point(0, 198);
+            btnGestion.Name = "btnGestion";
+            btnGestion.Size = new Size(221, 100);
+            btnGestion.TabIndex = 3;
+            btnGestion.Text = "Gestion de residentes";
+            btnGestion.UseVisualStyleBackColor = false;
+            btnGestion.Click += btnGestion_Click;
             // 
             // btnHistorial
             // 
-            btnHistorial.BackColor = Color.FromArgb(106, 156, 253);
-            btnHistorial.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnHistorial.BorderColor = Color.PaleVioletRed;
-            btnHistorial.BorderRadius = 20;
-            btnHistorial.BorderSize = 0;
-            btnHistorial.FlatAppearance.BorderSize = 0;
+            btnHistorial.BackColor = Color.PaleVioletRed;
             btnHistorial.FlatStyle = FlatStyle.Flat;
-            btnHistorial.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHistorial.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
             btnHistorial.ForeColor = Color.White;
-            btnHistorial.Location = new Point(26, 329);
+            btnHistorial.Location = new Point(0, 297);
             btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new Size(139, 63);
-            btnHistorial.TabIndex = 7;
+            btnHistorial.Size = new Size(221, 100);
+            btnHistorial.TabIndex = 2;
             btnHistorial.Text = "Historial de accesos";
-            btnHistorial.TextColor = Color.White;
             btnHistorial.UseVisualStyleBackColor = false;
-            btnHistorial.Click += btnHistorial_Click;
+            btnHistorial.Click += btnHistorial_Click_1;
             // 
-            // btnGestionRes
+            // btnAccesoPrincipal
             // 
-            btnGestionRes.BackColor = Color.FromArgb(106, 156, 253);
-            btnGestionRes.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnGestionRes.BorderColor = Color.PaleVioletRed;
-            btnGestionRes.BorderRadius = 20;
-            btnGestionRes.BorderSize = 0;
-            btnGestionRes.FlatAppearance.BorderSize = 0;
-            btnGestionRes.FlatStyle = FlatStyle.Flat;
-            btnGestionRes.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGestionRes.ForeColor = Color.White;
-            btnGestionRes.Location = new Point(26, 226);
-            btnGestionRes.Name = "btnGestionRes";
-            btnGestionRes.Size = new Size(139, 63);
-            btnGestionRes.TabIndex = 7;
-            btnGestionRes.Text = "Gestión de residentes";
-            btnGestionRes.TextColor = Color.White;
-            btnGestionRes.UseVisualStyleBackColor = false;
+            btnAccesoPrincipal.BackColor = Color.PaleVioletRed;
+            btnAccesoPrincipal.FlatStyle = FlatStyle.Flat;
+            btnAccesoPrincipal.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            btnAccesoPrincipal.ForeColor = Color.White;
+            btnAccesoPrincipal.Location = new Point(0, 99);
+            btnAccesoPrincipal.Name = "btnAccesoPrincipal";
+            btnAccesoPrincipal.Size = new Size(221, 100);
+            btnAccesoPrincipal.TabIndex = 1;
+            btnAccesoPrincipal.Text = "Acceso Principal";
+            btnAccesoPrincipal.UseVisualStyleBackColor = false;
+            btnAccesoPrincipal.Click += btnAccesoPrincipal_Click;
             // 
-            // btnAccesoPrin
+            // btnInicio
             // 
-            btnAccesoPrin.BackColor = Color.FromArgb(106, 156, 253);
-            btnAccesoPrin.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnAccesoPrin.BorderColor = Color.PaleVioletRed;
-            btnAccesoPrin.BorderRadius = 20;
-            btnAccesoPrin.BorderSize = 0;
-            btnAccesoPrin.FlatAppearance.BorderSize = 0;
-            btnAccesoPrin.FlatStyle = FlatStyle.Flat;
-            btnAccesoPrin.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAccesoPrin.ForeColor = Color.White;
-            btnAccesoPrin.Location = new Point(26, 124);
-            btnAccesoPrin.Name = "btnAccesoPrin";
-            btnAccesoPrin.Size = new Size(139, 63);
-            btnAccesoPrin.TabIndex = 7;
-            btnAccesoPrin.Text = "Acceso principal";
-            btnAccesoPrin.TextColor = Color.White;
-            btnAccesoPrin.UseVisualStyleBackColor = false;
-            btnAccesoPrin.Click += btnAccesoPrin_Click;
+            btnInicio.BackColor = Color.PaleVioletRed;
+            btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            btnInicio.ForeColor = Color.White;
+            btnInicio.Location = new Point(0, 0);
+            btnInicio.Margin = new Padding(1);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(221, 100);
+            btnInicio.TabIndex = 0;
+            btnInicio.Text = "Inicio";
+            btnInicio.UseVisualStyleBackColor = false;
+            btnInicio.Click += btnInicio_Click;
             // 
-            // btnInicios
+            // lblResidentes
             // 
-            btnInicios.BackColor = Color.FromArgb(106, 156, 253);
-            btnInicios.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnInicios.BorderColor = Color.PaleVioletRed;
-            btnInicios.BorderRadius = 20;
-            btnInicios.BorderSize = 0;
-            btnInicios.FlatAppearance.BorderSize = 0;
-            btnInicios.FlatStyle = FlatStyle.Flat;
-            btnInicios.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInicios.ForeColor = Color.White;
-            btnInicios.Location = new Point(26, 31);
-            btnInicios.Name = "btnInicios";
-            btnInicios.Size = new Size(139, 63);
-            btnInicios.TabIndex = 6;
-            btnInicios.Text = "Inicio";
-            btnInicios.TextColor = Color.White;
-            btnInicios.UseVisualStyleBackColor = false;
-            btnInicios.Click += btnInicios_Click;
+            lblResidentes.AutoSize = true;
+            lblResidentes.Font = new Font("Candara", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResidentes.Location = new Point(242, 94);
+            lblResidentes.Name = "lblResidentes";
+            lblResidentes.Size = new Size(122, 28);
+            lblResidentes.TabIndex = 7;
+            lblResidentes.Text = "Residentes";
+            // 
+            // btnCrear
+            // 
+            btnCrear.BackColor = Color.Pink;
+            btnCrear.FlatStyle = FlatStyle.Popup;
+            btnCrear.Location = new Point(395, 96);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new Size(90, 31);
+            btnCrear.TabIndex = 8;
+            btnCrear.Text = "Crear";
+            btnCrear.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.BackColor = Color.Pink;
+            btnActualizar.FlatStyle = FlatStyle.Popup;
+            btnActualizar.Location = new Point(559, 96);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(90, 31);
+            btnActualizar.TabIndex = 9;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.Pink;
+            btnEliminar.FlatStyle = FlatStyle.Popup;
+            btnEliminar.Location = new Point(727, 96);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(90, 31);
+            btnEliminar.TabIndex = 10;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // crud
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(979, 498);
+            ClientSize = new Size(1119, 664);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnActualizar);
+            Controls.Add(btnCrear);
+            Controls.Add(lblResidentes);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "crud";
             Text = "crud";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -173,9 +200,16 @@
         private Label label1;
         private Panel panel1;
         private Panel panel2;
-        private Buttons btnHistorial;
-        private Buttons btnGestionRes;
-        private Buttons btnAccesoPrin;
-        private Buttons btnInicios;
+        private Label lblResidentes;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button btnHistorial;
+        private Button btnAccesoPrincipal;
+        private Button btnInicio;
+        private Button btnGestion;
+        private Button btnCrear;
+        private Button btnActualizar;
+        private Button btnEliminar;
     }
 }

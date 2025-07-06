@@ -22,6 +22,7 @@ namespace examen
             this.Hide();
             Form1 form1 = new Form1();
             form1.ShowDialog();
+            this.Close();
         }
 
         private void btnAccesoPrin_Click(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace examen
             this.Hide();
             AccesoPrincipal principal = new AccesoPrincipal();
             principal.ShowDialog();
+            this.Close();
         }
 
         private void btnGestionRes_Click(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace examen
             this.Hide();
             crud c = new crud();
             c.ShowDialog();
+            this.Close();
         }
     }
 }
