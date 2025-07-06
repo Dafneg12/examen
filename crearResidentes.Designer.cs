@@ -102,9 +102,9 @@
             txtNombre.Location = new Point(30, 74);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Nombre";
             txtNombre.Size = new Size(372, 41);
             txtNombre.TabIndex = 5;
-            txtNombre.Text = "Nombre";
             // 
             // panel2
             // 
@@ -133,9 +133,9 @@
             txtApellidoPaterno.Location = new Point(30, 147);
             txtApellidoPaterno.Multiline = true;
             txtApellidoPaterno.Name = "txtApellidoPaterno";
+            txtApellidoPaterno.PlaceholderText = "Apellido paterno";
             txtApellidoPaterno.Size = new Size(372, 41);
             txtApellidoPaterno.TabIndex = 7;
-            txtApellidoPaterno.Text = "Apellido paterno";
             // 
             // panel4
             // 
@@ -155,9 +155,9 @@
             txtApellidoMaterno.Location = new Point(30, 221);
             txtApellidoMaterno.Multiline = true;
             txtApellidoMaterno.Name = "txtApellidoMaterno";
+            txtApellidoMaterno.PlaceholderText = "Apellido materno";
             txtApellidoMaterno.Size = new Size(372, 41);
             txtApellidoMaterno.TabIndex = 9;
-            txtApellidoMaterno.Text = "Apellido materno";
             // 
             // btnCrear
             // 
@@ -205,9 +205,9 @@
             txtTelefono.Location = new Point(30, 428);
             txtTelefono.Multiline = true;
             txtTelefono.Name = "txtTelefono";
+            txtTelefono.PlaceholderText = "Telefono";
             txtTelefono.Size = new Size(372, 41);
             txtTelefono.TabIndex = 17;
-            txtTelefono.Text = "Telefono";
             // 
             // panel6
             // 
@@ -227,9 +227,9 @@
             txtNumero.Location = new Point(30, 360);
             txtNumero.Multiline = true;
             txtNumero.Name = "txtNumero";
+            txtNumero.PlaceholderText = "Número";
             txtNumero.Size = new Size(372, 41);
             txtNumero.TabIndex = 15;
-            txtNumero.Text = "Numero";
             // 
             // panel7
             // 
@@ -249,9 +249,9 @@
             txtCalle.Location = new Point(30, 290);
             txtCalle.Multiline = true;
             txtCalle.Name = "txtCalle";
+            txtCalle.PlaceholderText = "Calle";
             txtCalle.Size = new Size(372, 41);
             txtCalle.TabIndex = 13;
-            txtCalle.Text = "Calle";
             // 
             // panel8
             // 
@@ -307,9 +307,9 @@
             txtCorreo.Location = new Point(30, 21);
             txtCorreo.Multiline = true;
             txtCorreo.Name = "txtCorreo";
+            txtCorreo.PlaceholderText = "Correo";
             txtCorreo.Size = new Size(372, 41);
             txtCorreo.TabIndex = 9;
-            txtCorreo.Text = "Correo";
             // 
             // panel11
             // 
@@ -329,9 +329,9 @@
             txtContraseña.Location = new Point(29, 92);
             txtContraseña.Multiline = true;
             txtContraseña.Name = "txtContraseña";
+            txtContraseña.PlaceholderText = "Contraseña";
             txtContraseña.Size = new Size(372, 41);
             txtContraseña.TabIndex = 7;
-            txtContraseña.Text = "Contraseña";
             // 
             // panel13
             // 
