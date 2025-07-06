@@ -164,6 +164,7 @@
             btnCrear.Text = "Crear";
             btnCrear.TextColor = Color.White;
             btnCrear.UseVisualStyleBackColor = false;
+            btnCrear.Click += btnCrear_Click;
             // 
             // btnActualizar
             // 

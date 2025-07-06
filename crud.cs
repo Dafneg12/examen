@@ -46,5 +46,13 @@ namespace examen
             hist.ShowDialog();
             this.Close();
         }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            crearResidentes crear = new crearResidentes();
+            crear.ShowDialog();
+            this.Close();
+        }
     }
 }
