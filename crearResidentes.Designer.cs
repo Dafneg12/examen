@@ -31,7 +31,7 @@
             panel1 = new Panel();
             btnRegresar = new Button();
             label1 = new Label();
-            txtNombreR = new TextBox();
+            txtNombre = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
             txtApellidoPaterno = new TextBox();
@@ -93,18 +93,18 @@
             label1.TabIndex = 0;
             label1.Text = "Residencia arboledas";
             // 
-            // txtNombreR
+            // txtNombre
             // 
-            txtNombreR.BackColor = Color.FromArgb(206, 144, 170);
-            txtNombreR.BorderStyle = BorderStyle.None;
-            txtNombreR.Font = new Font("Candara", 12F);
-            txtNombreR.ForeColor = SystemColors.InactiveBorder;
-            txtNombreR.Location = new Point(30, 74);
-            txtNombreR.Multiline = true;
-            txtNombreR.Name = "txtNombreR";
-            txtNombreR.Size = new Size(372, 41);
-            txtNombreR.TabIndex = 5;
-            txtNombreR.Text = "Nombre";
+            txtNombre.BackColor = Color.FromArgb(206, 144, 170);
+            txtNombre.BorderStyle = BorderStyle.None;
+            txtNombre.Font = new Font("Candara", 12F);
+            txtNombre.ForeColor = SystemColors.InactiveBorder;
+            txtNombre.Location = new Point(30, 74);
+            txtNombre.Multiline = true;
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(372, 41);
+            txtNombre.TabIndex = 5;
+            txtNombre.Text = "Nombre";
             // 
             // panel2
             // 
@@ -258,7 +258,7 @@
             panel8.Controls.Add(label2);
             panel8.Controls.Add(txtNumero);
             panel8.Controls.Add(panel5);
-            panel8.Controls.Add(txtNombreR);
+            panel8.Controls.Add(txtNombre);
             panel8.Controls.Add(txtTelefono);
             panel8.Controls.Add(panel2);
             panel8.Controls.Add(panel6);
@@ -367,7 +367,7 @@
 
         private Panel panel1;
         private Label label1;
-        private TextBox txtNombreR;
+        private TextBox txtNombre;
         private Panel panel2;
         private Panel panel3;
         private TextBox txtApellidoPaterno;

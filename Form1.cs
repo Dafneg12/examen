@@ -45,8 +45,8 @@ namespace examen
                 cboGuardia.ValueMember = "id_guardia";       
                 cboGuardia.DataSource = dt;
             }
-        }
 
+        }
 
 
         private void btnGestionResidentes_Click_1(object sender, EventArgs e)
