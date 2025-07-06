@@ -20,7 +20,7 @@ namespace examen
         private void CargarComboBox()
         {
             string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
-            string query = "SELECT guardiaID, nombre FROM Guardias";
+            string query = "SELECT id_guardia, nombre + ' '+ apellido_paterno +' '+ apellido_materno AS nombre FROM Guardias";
             
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -33,12 +33,12 @@ namespace examen
                 dt.Load(reader);
 
                 DataRow fila = dt.NewRow();
-                fila["guardiaID"] = 0; 
+                fila["id_guardia"] = 0; 
                 fila["nombre"] = "Seleccione el guardia";
                 dt.Rows.InsertAt(fila, 0);
 
                 cboGuardia.DisplayMember = "nombre"; 
-                cboGuardia.ValueMember = "guardiaID";       
+                cboGuardia.ValueMember = "id_guardia";       
                 cboGuardia.DataSource = dt;
             }
         }

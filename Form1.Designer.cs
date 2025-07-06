@@ -59,7 +59,7 @@
             cboGuardia.ItemHeight = 15;
             cboGuardia.Location = new Point(242, 108);
             cboGuardia.Name = "cboGuardia";
-            cboGuardia.Size = new Size(197, 23);
+            cboGuardia.Size = new Size(243, 23);
             cboGuardia.TabIndex = 1;
             // 
             // label2
