@@ -20,7 +20,11 @@ namespace examen
         private void CargarComboBox()
         {
             string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
-            string query = "SELECT id_guardia, nombre + ' '+ apellido_paterno +' '+ apellido_materno AS nombre FROM Guardias";
+
+            string query = "SELECT id_guardia, nombre FROM Guardias";
+=======
+            string query = "SELECT id_guardia, nombre FROM Guardias";
+>>>>>>> 8a2aafb9ede9a370d6e769c8ec9c3a750cf5f75a
             
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
