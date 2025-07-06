@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -42,9 +43,11 @@
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
             btnBuscar = new Buttons();
+            bindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -204,7 +207,9 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.DataSource = bindingSource1;
             dataGridView1.Location = new Point(242, 170);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -257,6 +262,7 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,5 +286,6 @@
         private DataGridView dataGridView1;
         private TextBox textBox1;
         private Buttons btnBuscar;
+        private BindingSource bindingSource1;
     }
 }

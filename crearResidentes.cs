@@ -126,7 +126,17 @@ namespace examen
                         transaction.Commit();
 
                         MessageBox.Show("Residente y usuario guardados correctamente.");
-                        txtIdResidente.Text = nuevoIdResidente.ToString();  // Mostrar el ID real
+                        txtIdResidente.Text = nuevoIdResidente.ToString(); 
+
+                        txtNombre.Clear();
+                        txtApellidoPaterno.Clear();
+                        txtApellidoMaterno.Clear();
+                        txtCalle.Clear();
+                        txtNumero.Clear();
+                        txtTelefono.Clear();
+                        txtCorreo.Clear();
+                        txtContraseña.Clear();
+
                     }
                     catch (Exception ex)
                     {
