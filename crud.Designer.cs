@@ -36,11 +36,15 @@
             btnAccesoPrincipal = new Button();
             btnInicio = new Button();
             lblResidentes = new Label();
-            btnCrear = new Button();
-            btnActualizar = new Button();
-            btnEliminar = new Button();
+            btnCrear = new Buttons();
+            btnActualizar = new Buttons();
+            btnEliminar = new Buttons();
+            dataGridView1 = new DataGridView();
+            textBox1 = new TextBox();
+            btnBuscar = new Buttons();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -55,7 +59,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.MediumVioletRed;
+            panel1.BackColor = Color.FromArgb(202, 111, 150);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -65,7 +69,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.PaleVioletRed;
+            panel2.BackColor = Color.FromArgb(235, 141, 181);
             panel2.Controls.Add(btnGestion);
             panel2.Controls.Add(btnHistorial);
             panel2.Controls.Add(btnAccesoPrincipal);
@@ -78,7 +82,7 @@
             // 
             // btnGestion
             // 
-            btnGestion.BackColor = Color.PaleVioletRed;
+            btnGestion.BackColor = Color.FromArgb(235, 141, 181);
             btnGestion.FlatStyle = FlatStyle.Flat;
             btnGestion.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
             btnGestion.ForeColor = Color.White;
@@ -92,7 +96,7 @@
             // 
             // btnHistorial
             // 
-            btnHistorial.BackColor = Color.PaleVioletRed;
+            btnHistorial.BackColor = Color.FromArgb(235, 141, 181);
             btnHistorial.FlatStyle = FlatStyle.Flat;
             btnHistorial.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
             btnHistorial.ForeColor = Color.White;
@@ -106,7 +110,7 @@
             // 
             // btnAccesoPrincipal
             // 
-            btnAccesoPrincipal.BackColor = Color.PaleVioletRed;
+            btnAccesoPrincipal.BackColor = Color.FromArgb(235, 141, 181);
             btnAccesoPrincipal.FlatStyle = FlatStyle.Flat;
             btnAccesoPrincipal.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
             btnAccesoPrincipal.ForeColor = Color.White;
@@ -120,7 +124,7 @@
             // 
             // btnInicio
             // 
-            btnInicio.BackColor = Color.PaleVioletRed;
+            btnInicio.BackColor = Color.FromArgb(235, 141, 181);
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
             btnInicio.ForeColor = Color.White;
@@ -137,7 +141,7 @@
             // 
             lblResidentes.AutoSize = true;
             lblResidentes.Font = new Font("Candara", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResidentes.Location = new Point(242, 94);
+            lblResidentes.Location = new Point(242, 95);
             lblResidentes.Name = "lblResidentes";
             lblResidentes.Size = new Size(122, 28);
             lblResidentes.TabIndex = 7;
@@ -145,52 +149,113 @@
             // 
             // btnCrear
             // 
-            btnCrear.BackColor = Color.Pink;
-            btnCrear.FlatStyle = FlatStyle.Popup;
-            btnCrear.Location = new Point(395, 96);
+            btnCrear.BackColor = Color.FromArgb(202, 111, 150);
+            btnCrear.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnCrear.BorderColor = Color.FromArgb(202, 111, 150);
+            btnCrear.BorderRadius = 20;
+            btnCrear.BorderSize = 0;
+            btnCrear.FlatAppearance.BorderSize = 0;
+            btnCrear.FlatStyle = FlatStyle.Flat;
+            btnCrear.ForeColor = Color.White;
+            btnCrear.Location = new Point(381, 90);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(90, 31);
-            btnCrear.TabIndex = 8;
+            btnCrear.Size = new Size(100, 40);
+            btnCrear.TabIndex = 11;
             btnCrear.Text = "Crear";
+            btnCrear.TextColor = Color.White;
             btnCrear.UseVisualStyleBackColor = false;
             // 
             // btnActualizar
             // 
-            btnActualizar.BackColor = Color.Pink;
-            btnActualizar.FlatStyle = FlatStyle.Popup;
-            btnActualizar.Location = new Point(559, 96);
+            btnActualizar.BackColor = Color.FromArgb(202, 111, 150);
+            btnActualizar.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnActualizar.BorderColor = Color.FromArgb(202, 111, 150);
+            btnActualizar.BorderRadius = 20;
+            btnActualizar.BorderSize = 0;
+            btnActualizar.FlatAppearance.BorderSize = 0;
+            btnActualizar.FlatStyle = FlatStyle.Flat;
+            btnActualizar.ForeColor = Color.White;
+            btnActualizar.Location = new Point(509, 91);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(90, 31);
-            btnActualizar.TabIndex = 9;
+            btnActualizar.Size = new Size(100, 40);
+            btnActualizar.TabIndex = 12;
             btnActualizar.Text = "Actualizar";
+            btnActualizar.TextColor = Color.White;
             btnActualizar.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.Pink;
-            btnEliminar.FlatStyle = FlatStyle.Popup;
-            btnEliminar.Location = new Point(727, 96);
+            btnEliminar.BackColor = Color.FromArgb(202, 111, 150);
+            btnEliminar.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnEliminar.BorderColor = Color.FromArgb(202, 111, 150);
+            btnEliminar.BorderRadius = 20;
+            btnEliminar.BorderSize = 0;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(637, 90);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(90, 31);
-            btnEliminar.TabIndex = 10;
+            btnEliminar.Size = new Size(100, 40);
+            btnEliminar.TabIndex = 13;
             btnEliminar.Text = "Eliminar";
+            btnEliminar.TextColor = Color.White;
             btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(242, 170);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(865, 472);
+            dataGridView1.TabIndex = 14;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(769, 97);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(284, 27);
+            textBox1.TabIndex = 15;
+            textBox1.Text = "Busqueda (nombre/domicilio)...";
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = SystemColors.Control;
+            btnBuscar.BackgroundColor = SystemColors.Control;
+            btnBuscar.BorderColor = SystemColors.ControlLight;
+            btnBuscar.BorderRadius = 20;
+            btnBuscar.BorderSize = 0;
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.ForeColor = Color.Black;
+            btnBuscar.Location = new Point(1059, 90);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(45, 39);
+            btnBuscar.TabIndex = 16;
+            btnBuscar.Text = "🔍";
+            btnBuscar.TextColor = Color.Black;
+            btnBuscar.UseVisualStyleBackColor = false;
             // 
             // crud
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 664);
+            Controls.Add(btnBuscar);
+            Controls.Add(textBox1);
+            Controls.Add(dataGridView1);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
             Controls.Add(btnCrear);
             Controls.Add(lblResidentes);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "crud";
             Text = "crud";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,8 +273,11 @@
         private Button btnAccesoPrincipal;
         private Button btnInicio;
         private Button btnGestion;
-        private Button btnCrear;
-        private Button btnActualizar;
-        private Button btnEliminar;
+        private Buttons btnCrear;
+        private Buttons btnActualizar;
+        private Buttons btnEliminar;
+        private DataGridView dataGridView1;
+        private TextBox textBox1;
+        private Buttons btnBuscar;
     }
 }

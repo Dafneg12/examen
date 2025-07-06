@@ -31,151 +31,197 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            btnHistorial = new Buttons();
-            btnGestionRes = new Buttons();
-            btnAccesoPrin = new Buttons();
-            btnInicios = new Buttons();
+            btnGestion = new Button();
+            btnInicio = new Button();
+            btnHistorial = new Button();
+            btnAccesoPrincipal = new Button();
+            lblHistorial = new Label();
+            panel3 = new Panel();
+            lblFiltros = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(106, 156, 253);
+            panel1.BackColor = Color.FromArgb(132, 176, 198);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
+            panel1.ForeColor = Color.Black;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 48);
+            panel1.Size = new Size(1259, 64);
             panel1.TabIndex = 5;
             // 
             // label1
             // 
             label1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(12, 9);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(12, 21);
             label1.Name = "label1";
-            label1.Size = new Size(150, 26);
-            label1.TabIndex = 0;
+            label1.Size = new Size(179, 31);
+            label1.TabIndex = 1;
             label1.Text = "Residecia arboledas";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.LightSteelBlue;
+            panel2.BackColor = Color.FromArgb(159, 209, 234);
+            panel2.Controls.Add(btnGestion);
+            panel2.Controls.Add(btnInicio);
             panel2.Controls.Add(btnHistorial);
-            panel2.Controls.Add(btnGestionRes);
-            panel2.Controls.Add(btnAccesoPrin);
-            panel2.Controls.Add(btnInicios);
+            panel2.Controls.Add(btnAccesoPrincipal);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 48);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(194, 402);
+            panel2.Size = new Size(222, 553);
             panel2.TabIndex = 6;
+            // 
+            // btnGestion
+            // 
+            btnGestion.BackColor = Color.FromArgb(159, 209, 234);
+            btnGestion.FlatStyle = FlatStyle.Flat;
+            btnGestion.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            btnGestion.ForeColor = Color.Black;
+            btnGestion.Location = new Point(0, 200);
+            btnGestion.Name = "btnGestion";
+            btnGestion.Size = new Size(221, 100);
+            btnGestion.TabIndex = 10;
+            btnGestion.Text = "Gestion de residentes";
+            btnGestion.UseVisualStyleBackColor = false;
+            // 
+            // btnInicio
+            // 
+            btnInicio.BackColor = Color.FromArgb(159, 209, 234);
+            btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            btnInicio.ForeColor = Color.Black;
+            btnInicio.Location = new Point(0, 2);
+            btnInicio.Margin = new Padding(1);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(221, 100);
+            btnInicio.TabIndex = 7;
+            btnInicio.Text = "Inicio";
+            btnInicio.UseVisualStyleBackColor = false;
             // 
             // btnHistorial
             // 
-            btnHistorial.BackColor = Color.FromArgb(106, 156, 253);
-            btnHistorial.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnHistorial.BorderColor = Color.PaleVioletRed;
-            btnHistorial.BorderRadius = 20;
-            btnHistorial.BorderSize = 0;
-            btnHistorial.FlatAppearance.BorderSize = 0;
+            btnHistorial.BackColor = Color.FromArgb(159, 209, 234);
             btnHistorial.FlatStyle = FlatStyle.Flat;
-            btnHistorial.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnHistorial.ForeColor = Color.White;
-            btnHistorial.Location = new Point(23, 256);
+            btnHistorial.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            btnHistorial.ForeColor = Color.Black;
+            btnHistorial.Location = new Point(0, 299);
             btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new Size(139, 47);
-            btnHistorial.TabIndex = 7;
+            btnHistorial.Size = new Size(221, 100);
+            btnHistorial.TabIndex = 9;
             btnHistorial.Text = "Historial de accesos";
-            btnHistorial.TextColor = Color.White;
             btnHistorial.UseVisualStyleBackColor = false;
             // 
-            // btnGestionRes
+            // btnAccesoPrincipal
             // 
-            btnGestionRes.BackColor = Color.FromArgb(106, 156, 253);
-            btnGestionRes.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnGestionRes.BorderColor = Color.PaleVioletRed;
-            btnGestionRes.BorderRadius = 20;
-            btnGestionRes.BorderSize = 0;
-            btnGestionRes.FlatAppearance.BorderSize = 0;
-            btnGestionRes.FlatStyle = FlatStyle.Flat;
-            btnGestionRes.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGestionRes.ForeColor = Color.White;
-            btnGestionRes.Location = new Point(23, 180);
-            btnGestionRes.Name = "btnGestionRes";
-            btnGestionRes.Size = new Size(139, 45);
-            btnGestionRes.TabIndex = 7;
-            btnGestionRes.Text = "Gestión de residentes";
-            btnGestionRes.TextColor = Color.White;
-            btnGestionRes.UseVisualStyleBackColor = false;
-            btnGestionRes.Click += btnGestionRes_Click;
+            btnAccesoPrincipal.BackColor = Color.FromArgb(159, 209, 234);
+            btnAccesoPrincipal.FlatStyle = FlatStyle.Flat;
+            btnAccesoPrincipal.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            btnAccesoPrincipal.ForeColor = Color.Black;
+            btnAccesoPrincipal.Location = new Point(0, 101);
+            btnAccesoPrincipal.Name = "btnAccesoPrincipal";
+            btnAccesoPrincipal.Size = new Size(221, 100);
+            btnAccesoPrincipal.TabIndex = 8;
+            btnAccesoPrincipal.Text = "Acceso Principal";
+            btnAccesoPrincipal.UseVisualStyleBackColor = false;
             // 
-            // btnAccesoPrin
+            // lblHistorial
             // 
-            btnAccesoPrin.BackColor = Color.FromArgb(106, 156, 253);
-            btnAccesoPrin.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnAccesoPrin.BorderColor = Color.PaleVioletRed;
-            btnAccesoPrin.BorderRadius = 20;
-            btnAccesoPrin.BorderSize = 0;
-            btnAccesoPrin.FlatAppearance.BorderSize = 0;
-            btnAccesoPrin.FlatStyle = FlatStyle.Flat;
-            btnAccesoPrin.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAccesoPrin.ForeColor = Color.White;
-            btnAccesoPrin.Location = new Point(23, 115);
-            btnAccesoPrin.Name = "btnAccesoPrin";
-            btnAccesoPrin.Size = new Size(139, 41);
-            btnAccesoPrin.TabIndex = 7;
-            btnAccesoPrin.Text = "Acceso principal";
-            btnAccesoPrin.TextColor = Color.White;
-            btnAccesoPrin.UseVisualStyleBackColor = false;
-            btnAccesoPrin.Click += btnAccesoPrin_Click;
+            lblHistorial.AutoSize = true;
+            lblHistorial.Font = new Font("Candara", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHistorial.Location = new Point(244, 71);
+            lblHistorial.Name = "lblHistorial";
+            lblHistorial.Size = new Size(197, 28);
+            lblHistorial.TabIndex = 8;
+            lblHistorial.Text = "Historial de acceso";
             // 
-            // btnInicios
+            // panel3
             // 
-            btnInicios.BackColor = Color.FromArgb(106, 156, 253);
-            btnInicios.BackgroundColor = Color.FromArgb(106, 156, 253);
-            btnInicios.BorderColor = Color.PaleVioletRed;
-            btnInicios.BorderRadius = 20;
-            btnInicios.BorderSize = 0;
-            btnInicios.FlatAppearance.BorderSize = 0;
-            btnInicios.FlatStyle = FlatStyle.Flat;
-            btnInicios.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInicios.ForeColor = Color.White;
-            btnInicios.Location = new Point(23, 45);
-            btnInicios.Name = "btnInicios";
-            btnInicios.Size = new Size(139, 41);
-            btnInicios.TabIndex = 6;
-            btnInicios.Text = "Inicio";
-            btnInicios.TextColor = Color.White;
-            btnInicios.UseVisualStyleBackColor = false;
-            btnInicios.Click += btnInicios_Click;
+            panel3.Controls.Add(comboBox2);
+            panel3.Controls.Add(comboBox1);
+            panel3.Controls.Add(dateTimePicker1);
+            panel3.Controls.Add(lblFiltros);
+            panel3.Location = new Point(243, 113);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1003, 63);
+            panel3.TabIndex = 9;
+            // 
+            // lblFiltros
+            // 
+            lblFiltros.AutoSize = true;
+            lblFiltros.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFiltros.Location = new Point(12, 18);
+            lblFiltros.Name = "lblFiltros";
+            lblFiltros.Size = new Size(72, 28);
+            lblFiltros.TabIndex = 9;
+            lblFiltros.Text = "Filtros";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(116, 18);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(126, 27);
+            dateTimePicker1.TabIndex = 10;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(264, 17);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 11;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(539, 20);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(151, 28);
+            comboBox2.TabIndex = 12;
             // 
             // Historial
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1259, 617);
+            Controls.Add(panel3);
+            Controls.Add(lblHistorial);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Historial";
             Text = "Historial";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel panel1;
-        private Label label1;
         private Panel panel2;
-        private Buttons btnHistorial;
-        private Buttons btnGestionRes;
-        private Buttons btnAccesoPrin;
-        private Buttons btnInicios;
+        private Button btnGestion;
+        private Button btnInicio;
+        private Button btnHistorial;
+        private Button btnAccesoPrincipal;
+        private Label label1;
+        private Label lblHistorial;
+        private Panel panel3;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
+        private DateTimePicker dateTimePicker1;
+        private Label lblFiltros;
     }
 }
