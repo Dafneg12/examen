@@ -65,7 +65,7 @@ namespace examen
             string query = "SELECT * FROM Residentes";
 
             connection = new SqlConnection(connectionString);
-            
+
             try
             {
                 connection.Open();
@@ -81,6 +81,8 @@ namespace examen
             {
                 MessageBox.Show("Error al cargar los datos: " + ex.Message);
             }
+
+            dataGridView1.AllowUserToDeleteRows = true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -116,6 +118,34 @@ namespace examen
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar los cambios: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        dataGridView1.Rows.Remove(row);
+                    }
+                }
+
+                try
+                {
+                    adapter.Update(tablaResidentes);
+                    MessageBox.Show("Residente eliminado correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el residente: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una fila para eliminar.");
             }
         }
     }

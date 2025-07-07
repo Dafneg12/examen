@@ -98,7 +98,7 @@
             txtNombre.BackColor = Color.FromArgb(240, 184, 216);
             txtNombre.BorderStyle = BorderStyle.None;
             txtNombre.Font = new Font("Candara", 12F);
-            txtNombre.ForeColor = SystemColors.InactiveBorder;
+            txtNombre.ForeColor = Color.Black;
             txtNombre.Location = new Point(30, 74);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
@@ -129,7 +129,7 @@
             txtApellidoPaterno.BackColor = Color.FromArgb(240, 184, 216);
             txtApellidoPaterno.BorderStyle = BorderStyle.None;
             txtApellidoPaterno.Font = new Font("Candara", 12F);
-            txtApellidoPaterno.ForeColor = SystemColors.InactiveBorder;
+            txtApellidoPaterno.ForeColor = Color.Black;
             txtApellidoPaterno.Location = new Point(30, 147);
             txtApellidoPaterno.Multiline = true;
             txtApellidoPaterno.Name = "txtApellidoPaterno";
@@ -151,7 +151,7 @@
             txtApellidoMaterno.BackColor = Color.FromArgb(240, 184, 216);
             txtApellidoMaterno.BorderStyle = BorderStyle.None;
             txtApellidoMaterno.Font = new Font("Candara", 12F);
-            txtApellidoMaterno.ForeColor = SystemColors.InactiveBorder;
+            txtApellidoMaterno.ForeColor = Color.Black;
             txtApellidoMaterno.Location = new Point(30, 221);
             txtApellidoMaterno.Multiline = true;
             txtApellidoMaterno.Name = "txtApellidoMaterno";
@@ -201,7 +201,7 @@
             txtTelefono.BackColor = Color.FromArgb(240, 184, 216);
             txtTelefono.BorderStyle = BorderStyle.None;
             txtTelefono.Font = new Font("Candara", 12F);
-            txtTelefono.ForeColor = SystemColors.InactiveBorder;
+            txtTelefono.ForeColor = Color.Black;
             txtTelefono.Location = new Point(30, 428);
             txtTelefono.Multiline = true;
             txtTelefono.Name = "txtTelefono";
@@ -223,7 +223,7 @@
             txtNumero.BackColor = Color.FromArgb(240, 184, 216);
             txtNumero.BorderStyle = BorderStyle.None;
             txtNumero.Font = new Font("Candara", 12F);
-            txtNumero.ForeColor = SystemColors.InactiveBorder;
+            txtNumero.ForeColor = Color.Black;
             txtNumero.Location = new Point(30, 360);
             txtNumero.Multiline = true;
             txtNumero.Name = "txtNumero";
@@ -245,7 +245,7 @@
             txtCalle.BackColor = Color.FromArgb(240, 184, 216);
             txtCalle.BorderStyle = BorderStyle.None;
             txtCalle.Font = new Font("Candara", 12F);
-            txtCalle.ForeColor = SystemColors.InactiveBorder;
+            txtCalle.ForeColor = Color.Black;
             txtCalle.Location = new Point(30, 290);
             txtCalle.Multiline = true;
             txtCalle.Name = "txtCalle";
@@ -303,7 +303,7 @@
             txtCorreo.BackColor = Color.FromArgb(240, 184, 216);
             txtCorreo.BorderStyle = BorderStyle.None;
             txtCorreo.Font = new Font("Candara", 12F);
-            txtCorreo.ForeColor = SystemColors.InactiveBorder;
+            txtCorreo.ForeColor = Color.Black;
             txtCorreo.Location = new Point(30, 21);
             txtCorreo.Multiline = true;
             txtCorreo.Name = "txtCorreo";
@@ -325,7 +325,7 @@
             txtContraseña.BackColor = Color.FromArgb(240, 184, 216);
             txtContraseña.BorderStyle = BorderStyle.None;
             txtContraseña.Font = new Font("Candara", 12F);
-            txtContraseña.ForeColor = SystemColors.InactiveBorder;
+            txtContraseña.ForeColor = Color.Black;
             txtContraseña.Location = new Point(29, 92);
             txtContraseña.Multiline = true;
             txtContraseña.Name = "txtContraseña";

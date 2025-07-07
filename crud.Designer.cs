@@ -204,6 +204,7 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.TextColor = Color.Black;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // dataGridView1
             // 
