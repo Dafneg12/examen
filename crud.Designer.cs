@@ -218,6 +218,7 @@
             txtBuscar.PlaceholderText = "Busqueda (nombre/domicilio)...";
             txtBuscar.Size = new Size(352, 42);
             txtBuscar.TabIndex = 15;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // btnBuscar
             // 
@@ -236,6 +237,7 @@
             btnBuscar.Text = "🔍";
             btnBuscar.TextColor = Color.Black;
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // crud
             // 

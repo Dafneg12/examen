@@ -14,6 +14,7 @@ namespace examen
     public partial class crud : Form
     {
         string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
+        private DataTable tablaResidentes;
         public crud()
         {
             InitializeComponent();
@@ -59,7 +60,7 @@ namespace examen
 
         private void cargarResidentes()
         {
-            string query = "SELECT * FROM Residentes"; 
+            string query = "SELECT * FROM Residentes";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -67,15 +68,37 @@ namespace examen
                 {
                     connection.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    dataGridView1.DataSource = dataTable;
+                    tablaResidentes = new DataTable();
+                    adapter.Fill(tablaResidentes);
+                    dataGridView1.DataSource = tablaResidentes;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al cargar los datos: " + ex.Message);
                 }
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (tablaResidentes == null || tablaResidentes.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos cargados.");
+                return;
+            }
+
+            string texto = txtBuscar.Text.Trim().Replace("'", "''");
+
+            tablaResidentes.DefaultView.RowFilter = $"nombre LIKE '%{txtBuscar.Text}%' OR calle LIKE '%{txtBuscar.Text}%'";
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                tablaResidentes.DefaultView.RowFilter = string.Empty;
+            }
+            
         }
     }
 }
