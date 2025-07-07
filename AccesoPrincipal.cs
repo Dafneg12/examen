@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AForge.Video;
+using AForge.Video.DirectShow;
+using Microsoft.Data.SqlClient;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AForge.Video;
-using AForge.Video.DirectShow;
 using ZXing;
 using ZXing.Windows.Compatibility;
 
@@ -84,6 +86,32 @@ namespace examen
                     camara.SignalToStop();
                     camara.WaitForStop();
                     MessageBox.Show("codigo detectado " + resultado.Text);
+                    BuscarBase(resultado.Text);
+                }
+            }
+        }
+        private void BuscarBase(string codigo)
+        {
+            string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT r.nombre, r.apellido_paterno FROM Residentes r JOIN Codigos c ON r.id_residente = c.id_residenteS WHERE c.codigo =@codigo";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@codigo",codigo);
+                
+
+                SqlDataReader reader = cmd.ExecuteReader(); //new
+
+                if (reader.Read()) { 
+                 string nombre = reader["nombre"].ToString();
+                    string apellido = reader["apellido_paterno"].ToString();
+                    txtNombre.Text = nombre;
+                    txtApellidos.Text = apellido;
+                }
+                else
+                {
+                    MessageBox.Show("codigo qr no encontrado");
                 }
             }
         }
