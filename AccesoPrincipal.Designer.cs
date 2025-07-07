@@ -48,17 +48,16 @@
             label4 = new Label();
             label3 = new Label();
             lblTipo = new Label();
-            panel4 = new Panel();
             btnSalida = new Buttons();
             btnEntrada = new Buttons();
             buttons1 = new Buttons();
             pictureBox1 = new PictureBox();
             btnEscanear = new Buttons();
             timer1 = new System.Windows.Forms.Timer(components);
+            cboTipo = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -107,7 +106,7 @@
             panel2.Location = new Point(0, 48);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(194, 335);
+            panel2.Size = new Size(194, 397);
             panel2.TabIndex = 5;
             // 
             // btnHistorial
@@ -202,7 +201,7 @@
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(539, 53);
+            txtCodigo.Location = new Point(467, 219);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(192, 23);
             txtCodigo.TabIndex = 7;
@@ -217,7 +216,7 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(lblTipo);
-            panel3.Location = new Point(524, 105);
+            panel3.Location = new Point(679, 110);
             panel3.Name = "panel3";
             panel3.Size = new Size(228, 261);
             panel3.TabIndex = 9;
@@ -235,7 +234,6 @@
             txtInvitado.Name = "txtInvitado";
             txtInvitado.Size = new Size(118, 23);
             txtInvitado.TabIndex = 6;
-            txtInvitado.Visible = false;
             // 
             // txtApellidos
             // 
@@ -288,15 +286,6 @@
             lblTipo.TabIndex = 0;
             lblTipo.Text = "Invitado o residente";
             // 
-            // panel4
-            // 
-            panel4.Controls.Add(btnSalida);
-            panel4.Controls.Add(btnEntrada);
-            panel4.Location = new Point(738, 199);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(181, 172);
-            panel4.TabIndex = 10;
-            // 
             // btnSalida
             // 
             btnSalida.BackColor = Color.FromArgb(254, 229, 225);
@@ -308,7 +297,7 @@
             btnSalida.FlatStyle = FlatStyle.Flat;
             btnSalida.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalida.ForeColor = Color.FromArgb(3, 52, 149);
-            btnSalida.Location = new Point(20, 109);
+            btnSalida.Location = new Point(542, 393);
             btnSalida.Name = "btnSalida";
             btnSalida.Size = new Size(150, 40);
             btnSalida.TabIndex = 1;
@@ -328,7 +317,7 @@
             btnEntrada.FlatStyle = FlatStyle.Flat;
             btnEntrada.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrada.ForeColor = Color.FromArgb(3, 52, 149);
-            btnEntrada.Location = new Point(20, 39);
+            btnEntrada.Location = new Point(729, 393);
             btnEntrada.Name = "btnEntrada";
             btnEntrada.Size = new Size(150, 40);
             btnEntrada.TabIndex = 0;
@@ -371,6 +360,7 @@
             btnEscanear.BorderColor = Color.PaleVioletRed;
             btnEscanear.BorderRadius = 20;
             btnEscanear.BorderSize = 0;
+            btnEscanear.Enabled = false;
             btnEscanear.FlatAppearance.BorderSize = 0;
             btnEscanear.FlatStyle = FlatStyle.Flat;
             btnEscanear.ForeColor = Color.White;
@@ -387,15 +377,27 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // cboTipo
+            // 
+            cboTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTipo.FormattingEnabled = true;
+            cboTipo.Location = new Point(526, 75);
+            cboTipo.Name = "cboTipo";
+            cboTipo.Size = new Size(282, 23);
+            cboTipo.TabIndex = 14;
+            cboTipo.SelectedIndexChanged += cboTipo_SelectedIndexChanged;
+            // 
             // AccesoPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(919, 383);
+            ClientSize = new Size(919, 445);
+            Controls.Add(cboTipo);
+            Controls.Add(btnSalida);
             Controls.Add(btnEscanear);
+            Controls.Add(btnEntrada);
             Controls.Add(pictureBox1);
             Controls.Add(buttons1);
-            Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(txtCodigo);
             Controls.Add(label2);
@@ -403,12 +405,12 @@
             Controls.Add(panel1);
             Name = "AccesoPrincipal";
             Text = "AccesoPrincipal";
+            Load += AccesoPrincipal_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -434,7 +436,6 @@
         private TextBox txtInvitado;
         private TextBox txtApellidos;
         private TextBox txtNombre;
-        private Panel panel4;
         private Buttons btnSalida;
         private Buttons btnEntrada;
         private Buttons buttons1;
@@ -442,5 +443,6 @@
         private Buttons btnEscanear;
         private System.Windows.Forms.Timer timer1;
         private TextBox txtID;
+        private ComboBox cboTipo;
     }
 }
