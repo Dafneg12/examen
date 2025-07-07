@@ -51,26 +51,105 @@ namespace examen
 
         private void Historial_Load(object sender, EventArgs e)
         {
-            string query = @"SELECT a.id_acceso, a.fecha, a.tipo_acceso, r.nombre AS nombre_residente, i.nombre AS nombre_invitado, g.nombre AS nombre_guardia
-                             FROM Accesos a
-                             LEFT JOIN Residentes r ON a.id_residente = r.id_residente
-                             LEFT JOIN Invitados i ON a.id_invitado = i.id_invitado
-                             LEFT JOIN Guardias g ON a.id_guardia = g.id_guardia
-                             ORDER BY a.fecha DESC";
-
             connection = new SqlConnection(connectionString);
+
+            cboTipoPersona.SelectedIndex = 0;
+            cboTipoAcceso.SelectedIndex = 0;
+
             try
             {
                 connection.Open();
-                SqlDataAdapter da = new SqlDataAdapter(query, connection);
+                cargarTodo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar: " + ex.Message);
+            }
+        }
+
+        private void aplicarFiltros()
+        {
+            DateTime fecha = dateTimePicker1.Value.Date;
+            string tipoPersona = cboTipoPersona.SelectedItem?.ToString() ?? "Todos";
+            string tipoAcceso = cboTipoAcceso.SelectedItem?.ToString() ?? "Todos";
+
+            string query = @" SELECT a.id_acceso, a.fecha, a.tipo_acceso, r.nombre AS nombre_residente, i.nombre AS nombre_invitado, g.nombre AS nombre_guardia
+                              FROM Accesos a
+                              LEFT JOIN Residentes r ON a.id_residente = r.id_residente
+                              LEFT JOIN Invitados i ON a.id_invitado = i.id_invitado
+                              LEFT JOIN Guardias g ON a.id_guardia = g.id_guardia
+                              WHERE 1 = 1";
+
+            // Filtro por fecha
+            query += " AND CAST(a.fecha AS DATE) = @fecha";
+
+            // Filtro por tipo de persona
+            if (tipoPersona == "Residente")
+                query += " AND a.id_residente IS NOT NULL AND a.id_invitado IS NULL";
+            else if (tipoPersona == "Invitado")
+                query += " AND a.id_invitado IS NOT NULL AND a.id_residente IS NULL";
+
+            // Filtro por tipo de acceso
+            if (tipoAcceso == "Entrada" || tipoAcceso == "Salida")
+                query += " AND a.tipo_acceso = @tipoAcceso";
+
+            query += " ORDER BY a.fecha DESC";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+
+                if (tipoAcceso == "Entrada" || tipoAcceso == "Salida")
+                    cmd.Parameters.AddWithValue("@tipoAcceso", tipoAcceso);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable historial = new DataTable();
                 da.Fill(historial);
                 dataGridView1.DataSource = historial;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el historial: " + ex.Message);
+                MessageBox.Show("Error al aplicar filtros: " + ex.Message);
             }
+        }
+
+        private void cargarTodo()
+        {
+            string query = @" SELECT a.id_acceso, a.fecha, a.tipo_acceso, r.nombre AS nombre_residente, i.nombre AS nombre_invitado, g.nombre AS nombre_guardia
+                              FROM Accesos a
+                              LEFT JOIN Residentes r ON a.id_residente = r.id_residente
+                              LEFT JOIN Invitados i ON a.id_invitado = i.id_invitado
+                              LEFT JOIN Guardias g ON a.id_guardia = g.id_guardia
+                              ORDER BY a.fecha DESC";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable historial = new DataTable();
+                da.Fill(historial);
+                dataGridView1.DataSource = historial;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar todos los accesos: " + ex.Message);
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            aplicarFiltros();
+        }
+
+        private void cboTipoPersona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aplicarFiltros();
+        }
+
+        private void cboTipoAcceso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            aplicarFiltros();
         }
     }
 }

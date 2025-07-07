@@ -37,8 +37,8 @@
             btnAccesoPrincipal = new Button();
             lblHistorial = new Label();
             panel3 = new Panel();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cboTipoAcceso = new ComboBox();
+            cboTipoPersona = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             lblFiltros = new Label();
             dataGridView1 = new DataGridView();
@@ -150,8 +150,8 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(comboBox2);
-            panel3.Controls.Add(comboBox1);
+            panel3.Controls.Add(cboTipoAcceso);
+            panel3.Controls.Add(cboTipoPersona);
             panel3.Controls.Add(dateTimePicker1);
             panel3.Controls.Add(lblFiltros);
             panel3.Location = new Point(243, 113);
@@ -159,25 +159,27 @@
             panel3.Size = new Size(1003, 63);
             panel3.TabIndex = 9;
             // 
-            // comboBox2
+            // cboTipoAcceso
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "", "Entrada", "Salida" });
-            comboBox2.Location = new Point(467, 19);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
-            comboBox2.TabIndex = 12;
-            comboBox2.Text = "Tipo de acceso";
+            cboTipoAcceso.FormattingEnabled = true;
+            cboTipoAcceso.Items.AddRange(new object[] { "Tipo de acceso", "Entrada", "Salida" });
+            cboTipoAcceso.Location = new Point(467, 19);
+            cboTipoAcceso.Name = "cboTipoAcceso";
+            cboTipoAcceso.Size = new Size(151, 28);
+            cboTipoAcceso.TabIndex = 12;
+            cboTipoAcceso.Text = "Tipo de acceso";
+            cboTipoAcceso.SelectedIndexChanged += cboTipoAcceso_SelectedIndexChanged;
             // 
-            // comboBox1
+            // cboTipoPersona
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "", "Residente", "Invitado" });
-            comboBox1.Location = new Point(288, 19);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 11;
-            comboBox1.Text = "Tipo de persona";
+            cboTipoPersona.FormattingEnabled = true;
+            cboTipoPersona.Items.AddRange(new object[] { "Tipo de persona", "Residente", "Invitado" });
+            cboTipoPersona.Location = new Point(288, 19);
+            cboTipoPersona.Name = "cboTipoPersona";
+            cboTipoPersona.Size = new Size(151, 28);
+            cboTipoPersona.TabIndex = 11;
+            cboTipoPersona.Text = "Tipo de persona";
+            cboTipoPersona.SelectedIndexChanged += cboTipoPersona_SelectedIndexChanged;
             // 
             // dateTimePicker1
             // 
@@ -186,6 +188,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(126, 27);
             dateTimePicker1.TabIndex = 10;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // lblFiltros
             // 
@@ -240,8 +243,8 @@
         private Label label1;
         private Label lblHistorial;
         private Panel panel3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cboTipoAcceso;
+        private ComboBox cboTipoPersona;
         private DateTimePicker dateTimePicker1;
         private Label lblFiltros;
         private DataGridView dataGridView1;
