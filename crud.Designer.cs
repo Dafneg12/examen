@@ -50,7 +50,7 @@
             // label1
             // 
             label1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(9, 12);
             label1.Name = "label1";
             label1.Size = new Size(179, 31);
@@ -59,7 +59,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(202, 111, 150);
+            panel1.BackColor = Color.FromArgb(132, 176, 198);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -69,7 +69,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(235, 141, 181);
+            panel2.BackColor = Color.FromArgb(159, 209, 234);
             panel2.Controls.Add(btnGestion);
             panel2.Controls.Add(btnHistorial);
             panel2.Controls.Add(btnAccesoPrincipal);
@@ -82,10 +82,10 @@
             // 
             // btnGestion
             // 
-            btnGestion.BackColor = Color.FromArgb(235, 141, 181);
+            btnGestion.BackColor = Color.FromArgb(159, 209, 234);
             btnGestion.FlatStyle = FlatStyle.Flat;
             btnGestion.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            btnGestion.ForeColor = Color.White;
+            btnGestion.ForeColor = Color.Black;
             btnGestion.Location = new Point(0, 198);
             btnGestion.Name = "btnGestion";
             btnGestion.Size = new Size(212, 100);
@@ -95,10 +95,10 @@
             // 
             // btnHistorial
             // 
-            btnHistorial.BackColor = Color.FromArgb(235, 141, 181);
+            btnHistorial.BackColor = Color.FromArgb(159, 209, 234);
             btnHistorial.FlatStyle = FlatStyle.Flat;
             btnHistorial.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            btnHistorial.ForeColor = Color.White;
+            btnHistorial.ForeColor = Color.Black;
             btnHistorial.Location = new Point(0, 297);
             btnHistorial.Name = "btnHistorial";
             btnHistorial.Size = new Size(212, 100);
@@ -109,10 +109,10 @@
             // 
             // btnAccesoPrincipal
             // 
-            btnAccesoPrincipal.BackColor = Color.FromArgb(235, 141, 181);
+            btnAccesoPrincipal.BackColor = Color.FromArgb(159, 209, 234);
             btnAccesoPrincipal.FlatStyle = FlatStyle.Flat;
             btnAccesoPrincipal.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            btnAccesoPrincipal.ForeColor = Color.White;
+            btnAccesoPrincipal.ForeColor = Color.Black;
             btnAccesoPrincipal.Location = new Point(0, 99);
             btnAccesoPrincipal.Name = "btnAccesoPrincipal";
             btnAccesoPrincipal.Size = new Size(212, 100);
@@ -123,10 +123,10 @@
             // 
             // btnInicio
             // 
-            btnInicio.BackColor = Color.FromArgb(235, 141, 181);
+            btnInicio.BackColor = Color.FromArgb(159, 209, 234);
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            btnInicio.ForeColor = Color.White;
+            btnInicio.ForeColor = Color.Black;
             btnInicio.Location = new Point(0, 0);
             btnInicio.Margin = new Padding(1);
             btnInicio.Name = "btnInicio";
@@ -148,57 +148,61 @@
             // 
             // btnCrear
             // 
-            btnCrear.BackColor = Color.FromArgb(202, 111, 150);
-            btnCrear.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnCrear.BackColor = Color.FromArgb(132, 176, 198);
+            btnCrear.BackgroundColor = Color.FromArgb(132, 176, 198);
             btnCrear.BorderColor = Color.FromArgb(202, 111, 150);
             btnCrear.BorderRadius = 20;
             btnCrear.BorderSize = 0;
             btnCrear.FlatAppearance.BorderSize = 0;
             btnCrear.FlatStyle = FlatStyle.Flat;
-            btnCrear.ForeColor = Color.White;
+            btnCrear.Font = new Font("Candara Light", 10.2F);
+            btnCrear.ForeColor = Color.Black;
             btnCrear.Location = new Point(381, 90);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(100, 40);
             btnCrear.TabIndex = 11;
             btnCrear.Text = "Crear";
-            btnCrear.TextColor = Color.White;
+            btnCrear.TextColor = Color.Black;
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
             // btnActualizar
             // 
-            btnActualizar.BackColor = Color.FromArgb(202, 111, 150);
-            btnActualizar.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnActualizar.BackColor = Color.FromArgb(132, 176, 198);
+            btnActualizar.BackgroundColor = Color.FromArgb(132, 176, 198);
             btnActualizar.BorderColor = Color.FromArgb(202, 111, 150);
             btnActualizar.BorderRadius = 20;
             btnActualizar.BorderSize = 0;
             btnActualizar.FlatAppearance.BorderSize = 0;
             btnActualizar.FlatStyle = FlatStyle.Flat;
-            btnActualizar.ForeColor = Color.White;
+            btnActualizar.Font = new Font("Candara Light", 10.2F);
+            btnActualizar.ForeColor = Color.Black;
             btnActualizar.Location = new Point(509, 91);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(100, 40);
             btnActualizar.TabIndex = 12;
             btnActualizar.Text = "Actualizar";
-            btnActualizar.TextColor = Color.White;
+            btnActualizar.TextColor = Color.Black;
             btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.FromArgb(202, 111, 150);
-            btnEliminar.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnEliminar.BackColor = Color.FromArgb(132, 176, 198);
+            btnEliminar.BackgroundColor = Color.FromArgb(132, 176, 198);
             btnEliminar.BorderColor = Color.FromArgb(202, 111, 150);
             btnEliminar.BorderRadius = 20;
             btnEliminar.BorderSize = 0;
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Font = new Font("Candara Light", 10.2F);
+            btnEliminar.ForeColor = Color.Black;
             btnEliminar.Location = new Point(637, 90);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 40);
             btnEliminar.TabIndex = 13;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.TextColor = Color.White;
+            btnEliminar.TextColor = Color.Black;
             btnEliminar.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
@@ -212,6 +216,7 @@
             // 
             // txtBuscar
             // 
+            txtBuscar.Font = new Font("Candara Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBuscar.Location = new Point(769, 89);
             txtBuscar.Multiline = true;
             txtBuscar.Name = "txtBuscar";

@@ -59,7 +59,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(202, 111, 150);
+            panel1.BackColor = Color.FromArgb(132, 176, 198);
             panel1.Controls.Add(btnRegresar);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -71,10 +71,10 @@
             // btnRegresar
             // 
             btnRegresar.AutoSize = true;
-            btnRegresar.BackColor = Color.FromArgb(202, 111, 150);
+            btnRegresar.BackColor = Color.FromArgb(132, 176, 198);
             btnRegresar.FlatStyle = FlatStyle.Flat;
             btnRegresar.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegresar.ForeColor = Color.White;
+            btnRegresar.ForeColor = Color.Black;
             btnRegresar.Location = new Point(0, 0);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(55, 60);
@@ -86,7 +86,7 @@
             // label1
             // 
             label1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(256, 18);
             label1.Name = "label1";
             label1.Size = new Size(240, 31);
@@ -95,7 +95,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.BackColor = Color.FromArgb(206, 144, 170);
+            txtNombre.BackColor = Color.FromArgb(240, 184, 216);
             txtNombre.BorderStyle = BorderStyle.None;
             txtNombre.Font = new Font("Candara", 12F);
             txtNombre.ForeColor = SystemColors.InactiveBorder;
@@ -126,7 +126,7 @@
             // 
             // txtApellidoPaterno
             // 
-            txtApellidoPaterno.BackColor = Color.FromArgb(206, 144, 170);
+            txtApellidoPaterno.BackColor = Color.FromArgb(240, 184, 216);
             txtApellidoPaterno.BorderStyle = BorderStyle.None;
             txtApellidoPaterno.Font = new Font("Candara", 12F);
             txtApellidoPaterno.ForeColor = SystemColors.InactiveBorder;
@@ -148,7 +148,7 @@
             // 
             // txtApellidoMaterno
             // 
-            txtApellidoMaterno.BackColor = Color.FromArgb(206, 144, 170);
+            txtApellidoMaterno.BackColor = Color.FromArgb(240, 184, 216);
             txtApellidoMaterno.BorderStyle = BorderStyle.None;
             txtApellidoMaterno.Font = new Font("Candara", 12F);
             txtApellidoMaterno.ForeColor = SystemColors.InactiveBorder;
@@ -161,21 +161,21 @@
             // 
             // btnCrear
             // 
-            btnCrear.BackColor = Color.FromArgb(202, 111, 150);
-            btnCrear.BackgroundColor = Color.FromArgb(202, 111, 150);
+            btnCrear.BackColor = Color.FromArgb(132, 176, 198);
+            btnCrear.BackgroundColor = Color.FromArgb(132, 176, 198);
             btnCrear.BorderColor = Color.PaleVioletRed;
             btnCrear.BorderRadius = 20;
             btnCrear.BorderSize = 0;
             btnCrear.FlatAppearance.BorderSize = 0;
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCrear.ForeColor = Color.White;
+            btnCrear.ForeColor = Color.Black;
             btnCrear.Location = new Point(168, 812);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(128, 51);
             btnCrear.TabIndex = 11;
             btnCrear.Text = "Crear";
-            btnCrear.TextColor = Color.White;
+            btnCrear.TextColor = Color.Black;
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
@@ -198,7 +198,7 @@
             // 
             // txtTelefono
             // 
-            txtTelefono.BackColor = Color.FromArgb(206, 144, 170);
+            txtTelefono.BackColor = Color.FromArgb(240, 184, 216);
             txtTelefono.BorderStyle = BorderStyle.None;
             txtTelefono.Font = new Font("Candara", 12F);
             txtTelefono.ForeColor = SystemColors.InactiveBorder;
@@ -220,7 +220,7 @@
             // 
             // txtNumero
             // 
-            txtNumero.BackColor = Color.FromArgb(206, 144, 170);
+            txtNumero.BackColor = Color.FromArgb(240, 184, 216);
             txtNumero.BorderStyle = BorderStyle.None;
             txtNumero.Font = new Font("Candara", 12F);
             txtNumero.ForeColor = SystemColors.InactiveBorder;
@@ -242,7 +242,7 @@
             // 
             // txtCalle
             // 
-            txtCalle.BackColor = Color.FromArgb(206, 144, 170);
+            txtCalle.BackColor = Color.FromArgb(240, 184, 216);
             txtCalle.BorderStyle = BorderStyle.None;
             txtCalle.Font = new Font("Candara", 12F);
             txtCalle.ForeColor = SystemColors.InactiveBorder;
@@ -255,7 +255,7 @@
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(206, 144, 170);
+            panel8.BackColor = Color.FromArgb(240, 184, 216);
             panel8.Controls.Add(label2);
             panel8.Controls.Add(txtNumero);
             panel8.Controls.Add(panel5);
@@ -279,7 +279,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Gray;
             label2.Location = new Point(30, 22);
             label2.Name = "label2";
             label2.Size = new Size(29, 24);
@@ -288,7 +288,7 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(206, 144, 170);
+            panel9.BackColor = Color.FromArgb(240, 184, 216);
             panel9.Controls.Add(txtCorreo);
             panel9.Controls.Add(panel11);
             panel9.Controls.Add(txtContraseña);
@@ -300,7 +300,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.BackColor = Color.FromArgb(206, 144, 170);
+            txtCorreo.BackColor = Color.FromArgb(240, 184, 216);
             txtCorreo.BorderStyle = BorderStyle.None;
             txtCorreo.Font = new Font("Candara", 12F);
             txtCorreo.ForeColor = SystemColors.InactiveBorder;
@@ -322,7 +322,7 @@
             // 
             // txtContraseña
             // 
-            txtContraseña.BackColor = Color.FromArgb(206, 144, 170);
+            txtContraseña.BackColor = Color.FromArgb(240, 184, 216);
             txtContraseña.BorderStyle = BorderStyle.None;
             txtContraseña.Font = new Font("Candara", 12F);
             txtContraseña.ForeColor = SystemColors.InactiveBorder;

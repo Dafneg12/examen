@@ -15,6 +15,8 @@ namespace examen
     {
         string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
         private DataTable tablaResidentes;
+        private SqlDataAdapter adapter;
+        private SqlConnection connection;
         public crud()
         {
             InitializeComponent();
@@ -62,20 +64,22 @@ namespace examen
         {
             string query = "SELECT * FROM Residentes";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            connection = new SqlConnection(connectionString);
+            
+            try
             {
-                try
-                {
-                    connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    tablaResidentes = new DataTable();
-                    adapter.Fill(tablaResidentes);
-                    dataGridView1.DataSource = tablaResidentes;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar los datos: " + ex.Message);
-                }
+                connection.Open();
+                adapter = new SqlDataAdapter(query, connection);
+                SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+
+                tablaResidentes = new DataTable();
+                adapter.Fill(tablaResidentes);
+                dataGridView1.DataSource = tablaResidentes;
+                dataGridView1.Columns["id_residente"].ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message);
             }
         }
 
@@ -94,11 +98,25 @@ namespace examen
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(txtBuscar.Text))
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
                 tablaResidentes.DefaultView.RowFilter = string.Empty;
             }
-            
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                adapter.Update(tablaResidentes);
+                MessageBox.Show("Cambios guardados correctamente.");
+                connection?.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar los cambios: " + ex.Message);
+            }
         }
     }
 }
