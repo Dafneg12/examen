@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             label1 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -41,13 +40,11 @@
             btnActualizar = new Buttons();
             btnEliminar = new Buttons();
             dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
+            txtBuscar = new TextBox();
             btnBuscar = new Buttons();
-            bindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -67,7 +64,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1119, 60);
+            panel1.Size = new Size(1199, 60);
             panel1.TabIndex = 3;
             // 
             // panel2
@@ -80,7 +77,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(222, 604);
+            panel2.Size = new Size(211, 604);
             panel2.TabIndex = 6;
             // 
             // btnGestion
@@ -91,11 +88,10 @@
             btnGestion.ForeColor = Color.White;
             btnGestion.Location = new Point(0, 198);
             btnGestion.Name = "btnGestion";
-            btnGestion.Size = new Size(221, 100);
+            btnGestion.Size = new Size(212, 100);
             btnGestion.TabIndex = 3;
             btnGestion.Text = "Gestion de residentes";
             btnGestion.UseVisualStyleBackColor = false;
-            btnGestion.Click += btnGestion_Click;
             // 
             // btnHistorial
             // 
@@ -105,7 +101,7 @@
             btnHistorial.ForeColor = Color.White;
             btnHistorial.Location = new Point(0, 297);
             btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new Size(221, 100);
+            btnHistorial.Size = new Size(212, 100);
             btnHistorial.TabIndex = 2;
             btnHistorial.Text = "Historial de accesos";
             btnHistorial.UseVisualStyleBackColor = false;
@@ -119,7 +115,7 @@
             btnAccesoPrincipal.ForeColor = Color.White;
             btnAccesoPrincipal.Location = new Point(0, 99);
             btnAccesoPrincipal.Name = "btnAccesoPrincipal";
-            btnAccesoPrincipal.Size = new Size(221, 100);
+            btnAccesoPrincipal.Size = new Size(212, 100);
             btnAccesoPrincipal.TabIndex = 1;
             btnAccesoPrincipal.Text = "Acceso Principal";
             btnAccesoPrincipal.UseVisualStyleBackColor = false;
@@ -134,7 +130,7 @@
             btnInicio.Location = new Point(0, 0);
             btnInicio.Margin = new Padding(1);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(221, 100);
+            btnInicio.Size = new Size(212, 100);
             btnInicio.TabIndex = 0;
             btnInicio.Text = "Inicio";
             btnInicio.UseVisualStyleBackColor = false;
@@ -207,22 +203,21 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.DataSource = bindingSource1;
             dataGridView1.Location = new Point(242, 170);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(865, 472);
+            dataGridView1.Size = new Size(930, 472);
             dataGridView1.TabIndex = 14;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Location = new Point(769, 97);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 27);
-            textBox1.TabIndex = 15;
-            textBox1.Text = "Busqueda (nombre/domicilio)...";
+            txtBuscar.Location = new Point(769, 89);
+            txtBuscar.Multiline = true;
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Busqueda (nombre/domicilio)...";
+            txtBuscar.Size = new Size(352, 42);
+            txtBuscar.TabIndex = 15;
             // 
             // btnBuscar
             // 
@@ -234,7 +229,7 @@
             btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.ForeColor = Color.Black;
-            btnBuscar.Location = new Point(1059, 90);
+            btnBuscar.Location = new Point(1127, 91);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(45, 39);
             btnBuscar.TabIndex = 16;
@@ -246,9 +241,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1119, 664);
+            ClientSize = new Size(1199, 664);
             Controls.Add(btnBuscar);
-            Controls.Add(textBox1);
+            Controls.Add(txtBuscar);
             Controls.Add(dataGridView1);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
@@ -259,10 +254,10 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "crud";
             Text = "crud";
+            Load += crud_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -284,8 +279,7 @@
         private Buttons btnActualizar;
         private Buttons btnEliminar;
         private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private TextBox txtBuscar;
         private Buttons btnBuscar;
-        private BindingSource bindingSource1;
     }
 }

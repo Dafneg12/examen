@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace examen
 {
     public partial class crud : Form
     {
+        string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
         public crud()
         {
             InitializeComponent();
@@ -34,11 +36,6 @@ namespace examen
             this.Close();
         }
 
-        private void btnGestion_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnHistorial_Click_1(object sender, EventArgs e)
         {
             this.Hide();
@@ -53,6 +50,32 @@ namespace examen
             crearResidentes crear = new crearResidentes();
             crear.ShowDialog();
             this.Close();
+        }
+
+        private void crud_Load(object sender, EventArgs e)
+        {
+            cargarResidentes();
+        }
+
+        private void cargarResidentes()
+        {
+            string query = "SELECT * FROM Residentes"; 
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos: " + ex.Message);
+                }
+            }
         }
     }
 }
