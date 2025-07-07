@@ -37,6 +37,7 @@
             btnHistorial = new Buttons();
             pictureBox1 = new PictureBox();
             lblFecha = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -153,12 +154,22 @@
             lblFecha.TabIndex = 7;
             lblFecha.Text = "fecha";
             // 
+            // button1
+            // 
+            button1.Location = new Point(509, 238);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 8;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.GhostWhite;
             ClientSize = new Size(602, 447);
+            Controls.Add(button1);
             Controls.Add(lblFecha);
             Controls.Add(pictureBox1);
             Controls.Add(btnHistorial);
@@ -185,5 +196,6 @@
         private Buttons btnHistorial;
         private PictureBox pictureBox1;
         private Label lblFecha;
+        private Button button1;
     }
 }

@@ -40,6 +40,7 @@
             label2 = new Label();
             txtCodigo = new TextBox();
             panel3 = new Panel();
+            txtID = new TextBox();
             txtInvitado = new TextBox();
             txtApellidos = new TextBox();
             txtNombre = new TextBox();
@@ -208,6 +209,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(txtID);
             panel3.Controls.Add(txtInvitado);
             panel3.Controls.Add(txtApellidos);
             panel3.Controls.Add(txtNombre);
@@ -217,8 +219,15 @@
             panel3.Controls.Add(lblTipo);
             panel3.Location = new Point(524, 105);
             panel3.Name = "panel3";
-            panel3.Size = new Size(228, 209);
+            panel3.Size = new Size(228, 261);
             panel3.TabIndex = 9;
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(97, 203);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(100, 23);
+            txtID.TabIndex = 7;
             // 
             // txtInvitado
             // 
@@ -306,6 +315,7 @@
             btnSalida.Text = "Registrar salida";
             btnSalida.TextColor = Color.FromArgb(3, 52, 149);
             btnSalida.UseVisualStyleBackColor = false;
+            btnSalida.Click += btnSalida_Click;
             // 
             // btnEntrada
             // 
@@ -325,6 +335,7 @@
             btnEntrada.Text = "Registrar entrada";
             btnEntrada.TextColor = Color.FromArgb(3, 52, 149);
             btnEntrada.UseVisualStyleBackColor = false;
+            btnEntrada.Click += btnEntrada_Click;
             // 
             // buttons1
             // 
@@ -430,5 +441,6 @@
         private PictureBox pictureBox1;
         private Buttons btnEscanear;
         private System.Windows.Forms.Timer timer1;
+        private TextBox txtID;
     }
 }

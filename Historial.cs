@@ -15,6 +15,8 @@ namespace examen
     {
         string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
         private SqlConnection connection;
+        private int idGuardiaActual;
+        private DateTime fechaActual;
         public Historial()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace examen
         private void btnAccesoPrincipal_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AccesoPrincipal principal = new AccesoPrincipal();
+            AccesoPrincipal principal = new AccesoPrincipal(idGuardiaActual,fechaActual);
             principal.ShowDialog();
             this.Close();
         }

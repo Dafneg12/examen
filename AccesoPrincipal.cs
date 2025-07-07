@@ -20,10 +20,14 @@ namespace examen
     {
         private FilterInfoCollection dispositivos;
         private VideoCaptureDevice camara;
-        public AccesoPrincipal()
+        private int idGuardiaActual;
+        private DateTime fechaActual;
+        public AccesoPrincipal(int idGuardia, DateTime fechaActual)
         {
             InitializeComponent();
             lblFecha.Text = DateTime.Now.ToString();
+            idGuardiaActual = idGuardia;
+            this.fechaActual = fechaActual;
         }
 
         private void btnInicios_Click(object sender, EventArgs e)
@@ -75,13 +79,14 @@ namespace examen
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(pictureBox1.Image != null)
+            if (pictureBox1.Image != null)
             {
-                
+
                 BarcodeReader lector = new BarcodeReader();
                 Result resultado = lector.Decode((Bitmap)pictureBox1.Image);
-                if (resultado != null) { 
-                 txtCodigo.Text = resultado.Text;
+                if (resultado != null)
+                {
+                    txtCodigo.Text = resultado.Text;
                     timer1.Stop();
                     camara.SignalToStop();
                     camara.WaitForStop();
@@ -96,23 +101,147 @@ namespace examen
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT r.nombre, r.apellido_paterno FROM Residentes r JOIN Codigos c ON r.id_residente = c.id_residenteS WHERE c.codigo =@codigo";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@codigo",codigo);
-                
 
-                SqlDataReader reader = cmd.ExecuteReader(); //new
+                //verificar si es residente o invitado
+                string ver = "SELECT COUNT(*) FROM Codigos WHERE codigo = @codigo";
+                SqlCommand cmdCheck = new SqlCommand(ver, conn);
+                cmdCheck.Parameters.AddWithValue("@codigo", codigo);
+                int count = (int)cmdCheck.ExecuteScalar();
 
-                if (reader.Read()) { 
-                 string nombre = reader["nombre"].ToString();
-                    string apellido = reader["apellido_paterno"].ToString();
-                    txtNombre.Text = nombre;
-                    txtApellidos.Text = apellido;
-                }
+                if (count > 0)
+                {
+                    string query = "SELECT r.nombre, r.apellido_paterno, r.id_residente FROM Residentes r JOIN Codigos c ON r.id_residente = c.id_residenteS WHERE c.codigo =@codigo";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@codigo", codigo);
+
+
+                    SqlDataReader reader = cmd.ExecuteReader(); //new
+
+                    if (reader.Read())
+                    {
+                        string nombre = reader["nombre"].ToString();
+                        string apellido = reader["apellido_paterno"].ToString();
+                        string dat = lblFecha.Text.ToString();
+                        int id = (int)reader["id_residente"];
+                        txtNombre.Text = nombre;
+                        txtApellidos.Text = apellido;
+                        lblTipo.Text = "Residente";
+                        txtID.Text = id.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("codigo qr no encontrado");
+                    }
+                }//termina de verificar en residentes
                 else
                 {
-                    MessageBox.Show("codigo qr no encontrado");
+                    string verf = "SELECT COUNT(*) FROM Invitados WHERE codigo = @codigo";
+                    SqlCommand cmdChecks = new SqlCommand(verf, conn);
+                    cmdChecks.Parameters.AddWithValue("@codigo", codigo);
+                    int counts = (int)cmdCheck.ExecuteScalar();
+                    if (counts > 0) {
+                        string query = "SELECT i.nombre, i.apellido_paterno, r.nombre as nombreResidente FROM Invitados i JOIN Residentes r ON i.id_residente = r.id_residente WHERE i.codigo = @codigo";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@codigo", codigo);
+
+
+                        SqlDataReader reader = cmd.ExecuteReader(); //new
+
+                        if (reader.Read())
+                        {
+                            string nombre = reader["nombre"].ToString();
+                            string apellido = reader["apellido_paterno"].ToString();
+                            string dat = lblFecha.Text.ToString();
+                            string quieninvita = reader["nombreResidente"].ToString();
+                            int id = (int)reader["id_invitado"];
+                            txtNombre.Text = nombre;
+                            txtApellidos.Text = apellido;
+                            lblTipo.Text = "Invitado";
+                            txtID.Text = id.ToString();
+                            txtInvitado.Text = quieninvita;
+                        }
+                        else
+                        {
+                            MessageBox.Show("codigo qr no encontrado");
+                        }
+                    }
                 }
+            }
+        }
+        private void CrearHistorial(string nombre, string apellido, string tipoAcceso) { 
+        
+         
+        }
+
+        private void btnEntrada_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
+            int id = int.Parse(txtID.Text);
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                if (lblTipo.Text == "Residente")
+                {
+                    string insert = "INSERT into Accesos(fecha, tipo_acceso, id_residente, id_guardia) VALUES " +
+                           "(@fecha, @tipo, @idresidente, @idguardia)";
+                    cmd.CommandText = insert;
+                    cmd.Parameters.AddWithValue("@fecha", fechaActual);
+                    cmd.Parameters.AddWithValue("@tipo", "Entrada");
+                    cmd.Parameters.AddWithValue("@idresidente", id);
+                    cmd.Parameters.AddWithValue("@idguardia", idGuardiaActual);
+                }
+                else if(lblTipo.Text == "Invitado")
+                {
+                    string insert = "INSERT into Accesos(fecha, tipo_acceso, id_invitado, id_guardia) VALUES " +
+                           "(@fecha, @tipo, @idinvitado, @idguardia) WHERE ";
+                    cmd.CommandText = insert;
+                    cmd.Parameters.AddWithValue("@fecha", fechaActual);
+                    cmd.Parameters.AddWithValue("@tipo", "Entrada");
+                    cmd.Parameters.AddWithValue("@idinvitado", id);
+                    cmd.Parameters.AddWithValue("@idguardia", idGuardiaActual);
+                }//final using
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Entrada registrada correctamente.");
+            }
+        }
+
+        private void btnSalida_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
+            int id = int.Parse(txtID.Text);
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                if (lblTipo.Text == "Residente")
+                {
+                    string insert = "INSERT into Accesos(fecha, tipo_acceso, id_residente, id_guardia) VALUES " +
+                           "(@fecha, @tipo, @idresidente, @idguardia)";
+                    cmd.CommandText = insert;
+                    cmd.Parameters.AddWithValue("@fecha", fechaActual);
+                    cmd.Parameters.AddWithValue("@tipo", "Salida");
+                    cmd.Parameters.AddWithValue("@idresidente", id);
+                    cmd.Parameters.AddWithValue("@idguardia", idGuardiaActual);
+                }
+                else if (lblTipo.Text == "Invitado")
+                {
+                    string insert = "INSERT into Accesos(fecha, tipo_acceso, id_invitado, id_guardia) VALUES " +
+                           "(@fecha, @tipo, @idinvitado, @idguardia) WHERE ";
+                    cmd.CommandText = insert;
+                    cmd.Parameters.AddWithValue("@fecha", fechaActual);
+                    cmd.Parameters.AddWithValue("@tipo", "Salida");
+                    cmd.Parameters.AddWithValue("@idinvitado", id);
+                    cmd.Parameters.AddWithValue("@idguardia", idGuardiaActual);
+                }//final using
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Entrada registrada correctamente.");
             }
         }
     }

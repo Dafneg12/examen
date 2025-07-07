@@ -44,6 +44,7 @@ namespace examen
                 cboGuardia.DisplayMember = "nombre"; 
                 cboGuardia.ValueMember = "id_guardia";       
                 cboGuardia.DataSource = dt;
+                
             }
 
         }
@@ -51,26 +52,52 @@ namespace examen
 
         private void btnGestionResidentes_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            crud gestionResidentes = new crud();
-            gestionResidentes.ShowDialog();
-            this.Close();
+            if (cboGuardia.SelectedIndex > 0)
+            {
+                this.Hide();
+                crud gestionResidentes = new crud();
+                gestionResidentes.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un guardia primero.");
+            }
         }
 
         private void btnAccesoPrincipal_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AccesoPrincipal principal = new AccesoPrincipal();
-            principal.ShowDialog();
-            this.Close();
+            if (cboGuardia.SelectedIndex > 0)
+            {
+                DateTime fecha = DateTime.Parse(lblFecha.Text);
+                int idGuardia = Convert.ToInt32(cboGuardia.SelectedValue);
+                MessageBox.Show("ID del guardia seleccionado: " + idGuardia);
+                // Pasar el ID y la fecha al formulario principal
+                AccesoPrincipal principal = new AccesoPrincipal(idGuardia, fecha);
+                principal.ShowDialog();
+                this.Hide();
+                
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un guardia primero."); 
+            }
+           
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Historial hist = new Historial();
-            hist.ShowDialog();
-            this.Close();
+            if (cboGuardia.SelectedIndex > 0)
+            {
+                this.Hide();
+                Historial hist = new Historial();
+                hist.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un guardia primero.");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

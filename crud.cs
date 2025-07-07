@@ -17,9 +17,12 @@ namespace examen
         private DataTable tablaResidentes;
         private SqlDataAdapter adapter;
         private SqlConnection connection;
+        private int idGuardiaActual;
+        private DateTime fechaActual;
         public crud()
         {
             InitializeComponent();
+            
         }
 
 
@@ -33,8 +36,9 @@ namespace examen
 
         private void btnAccesoPrincipal_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
-            AccesoPrincipal principal = new AccesoPrincipal();
+            AccesoPrincipal principal = new AccesoPrincipal(idGuardiaActual,fechaActual);
             principal.ShowDialog();
             this.Close();
         }
