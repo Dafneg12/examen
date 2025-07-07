@@ -74,7 +74,7 @@
             btnRegresar.BackColor = Color.FromArgb(132, 176, 198);
             btnRegresar.FlatStyle = FlatStyle.Flat;
             btnRegresar.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegresar.ForeColor = Color.Black;
+            btnRegresar.ForeColor = SystemColors.ButtonHighlight;
             btnRegresar.Location = new Point(0, 0);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(55, 60);
@@ -86,7 +86,7 @@
             // label1
             // 
             label1.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(256, 18);
             label1.Name = "label1";
             label1.Size = new Size(240, 31);
@@ -97,8 +97,8 @@
             // 
             txtNombre.BackColor = Color.FromArgb(240, 184, 216);
             txtNombre.BorderStyle = BorderStyle.None;
-            txtNombre.Font = new Font("Candara", 12F);
-            txtNombre.ForeColor = Color.Black;
+            txtNombre.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtNombre.ForeColor = SystemColors.ButtonHighlight;
             txtNombre.Location = new Point(30, 74);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
@@ -128,8 +128,8 @@
             // 
             txtApellidoPaterno.BackColor = Color.FromArgb(240, 184, 216);
             txtApellidoPaterno.BorderStyle = BorderStyle.None;
-            txtApellidoPaterno.Font = new Font("Candara", 12F);
-            txtApellidoPaterno.ForeColor = Color.Black;
+            txtApellidoPaterno.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtApellidoPaterno.ForeColor = SystemColors.ButtonHighlight;
             txtApellidoPaterno.Location = new Point(30, 147);
             txtApellidoPaterno.Multiline = true;
             txtApellidoPaterno.Name = "txtApellidoPaterno";
@@ -150,8 +150,8 @@
             // 
             txtApellidoMaterno.BackColor = Color.FromArgb(240, 184, 216);
             txtApellidoMaterno.BorderStyle = BorderStyle.None;
-            txtApellidoMaterno.Font = new Font("Candara", 12F);
-            txtApellidoMaterno.ForeColor = Color.Black;
+            txtApellidoMaterno.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtApellidoMaterno.ForeColor = SystemColors.ButtonHighlight;
             txtApellidoMaterno.Location = new Point(30, 221);
             txtApellidoMaterno.Multiline = true;
             txtApellidoMaterno.Name = "txtApellidoMaterno";
@@ -169,13 +169,13 @@
             btnCrear.FlatAppearance.BorderSize = 0;
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCrear.ForeColor = Color.Black;
+            btnCrear.ForeColor = SystemColors.ButtonHighlight;
             btnCrear.Location = new Point(168, 812);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(128, 51);
             btnCrear.TabIndex = 11;
             btnCrear.Text = "Crear";
-            btnCrear.TextColor = Color.Black;
+            btnCrear.TextColor = SystemColors.ButtonHighlight;
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
@@ -200,8 +200,8 @@
             // 
             txtTelefono.BackColor = Color.FromArgb(240, 184, 216);
             txtTelefono.BorderStyle = BorderStyle.None;
-            txtTelefono.Font = new Font("Candara", 12F);
-            txtTelefono.ForeColor = Color.Black;
+            txtTelefono.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtTelefono.ForeColor = SystemColors.ButtonHighlight;
             txtTelefono.Location = new Point(30, 428);
             txtTelefono.Multiline = true;
             txtTelefono.Name = "txtTelefono";
@@ -222,8 +222,8 @@
             // 
             txtNumero.BackColor = Color.FromArgb(240, 184, 216);
             txtNumero.BorderStyle = BorderStyle.None;
-            txtNumero.Font = new Font("Candara", 12F);
-            txtNumero.ForeColor = Color.Black;
+            txtNumero.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtNumero.ForeColor = SystemColors.ButtonHighlight;
             txtNumero.Location = new Point(30, 360);
             txtNumero.Multiline = true;
             txtNumero.Name = "txtNumero";
@@ -244,8 +244,8 @@
             // 
             txtCalle.BackColor = Color.FromArgb(240, 184, 216);
             txtCalle.BorderStyle = BorderStyle.None;
-            txtCalle.Font = new Font("Candara", 12F);
-            txtCalle.ForeColor = Color.Black;
+            txtCalle.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtCalle.ForeColor = SystemColors.ButtonHighlight;
             txtCalle.Location = new Point(30, 290);
             txtCalle.Multiline = true;
             txtCalle.Name = "txtCalle";
@@ -302,8 +302,8 @@
             // 
             txtCorreo.BackColor = Color.FromArgb(240, 184, 216);
             txtCorreo.BorderStyle = BorderStyle.None;
-            txtCorreo.Font = new Font("Candara", 12F);
-            txtCorreo.ForeColor = Color.Black;
+            txtCorreo.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtCorreo.ForeColor = SystemColors.ButtonHighlight;
             txtCorreo.Location = new Point(30, 21);
             txtCorreo.Multiline = true;
             txtCorreo.Name = "txtCorreo";
@@ -324,8 +324,8 @@
             // 
             txtContraseña.BackColor = Color.FromArgb(240, 184, 216);
             txtContraseña.BorderStyle = BorderStyle.None;
-            txtContraseña.Font = new Font("Candara", 12F);
-            txtContraseña.ForeColor = Color.Black;
+            txtContraseña.Font = new Font("Candara", 12F, FontStyle.Bold);
+            txtContraseña.ForeColor = SystemColors.ButtonHighlight;
             txtContraseña.Location = new Point(29, 92);
             txtContraseña.Multiline = true;
             txtContraseña.Name = "txtContraseña";
