@@ -66,3 +66,6 @@ CREATE TABLE UsuariosResidentes (
     contraseña NVARCHAR(150) NOT NULL,
     FOREIGN KEY (id_residente) REFERENCES Residentes(id_residente)
 );
+INSERT INTO Guardias(nombre, apellido_paterno, apellido_materno) VALUES ('Jonathan Alejandro','Alcantar', 'Paredes'),
+('Cristopher Leonardo','Alvarez', 'Nuñez');
+GO
