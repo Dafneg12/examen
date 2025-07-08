@@ -140,7 +140,8 @@ namespace examen
                 //cmdChecks.Parameters.AddWithValue("@codigo", codigo);
                 //int counts = (int)cmdCheck.ExecuteScalar();
                 //if (counts > 0) {
-                string query = "SELECT i.nombre as nombre, i.apellido_paterno as apellido_paterno, i.id_invitado as id_invitado, r.nombre as nombreResidente FROM Invitados i JOIN Residentes r ON i.id_residente = r.id_residente WHERE i.codigo = @codigo";
+                
+                string query = "SELECT i.nombre as nombre, i.apellido_paterno as apellido_paterno, i.id_invitado as id_invitado, r.nombre as nombreResidente,CAST(i.fecha AS DATE) AS fechaCodigo FROM Invitados i JOIN Residentes r ON i.id_residente = r.id_residente WHERE i.codigo = @codigo";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@codigo", codigo);
 
@@ -149,6 +150,14 @@ namespace examen
 
                 if (reader.Read())
                 {
+                    DateTime fechaCodigo = Convert.ToDateTime(reader["fechaCodigo"]);
+                    DateTime fechaHoy = DateTime.Now.Date;
+
+                    if (fechaCodigo != fechaHoy)
+                    {
+                        MessageBox.Show("Código QR caducado. Solo es válido el día de su generación.");
+                        return;
+                    }
                     string nombre = reader["nombre"].ToString();
                     string apellido = reader["apellido_paterno"].ToString();
                     string dat = lblFecha.Text.ToString();
