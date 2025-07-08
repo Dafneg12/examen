@@ -50,11 +50,11 @@
             lblTipo = new Label();
             btnSalida = new Buttons();
             btnEntrada = new Buttons();
-            buttons1 = new Buttons();
             pictureBox1 = new PictureBox();
             btnEscanear = new Buttons();
             timer1 = new System.Windows.Forms.Timer(components);
             cboTipo = new ComboBox();
+            label5 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -193,7 +193,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(3, 52, 149);
-            label2.Location = new Point(229, 79);
+            label2.Location = new Point(283, 129);
             label2.Name = "label2";
             label2.Size = new Size(125, 19);
             label2.TabIndex = 6;
@@ -201,9 +201,9 @@
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(467, 219);
+            txtCodigo.Location = new Point(747, 162);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(192, 23);
+            txtCodigo.Size = new Size(139, 23);
             txtCodigo.TabIndex = 7;
             // 
             // panel3
@@ -216,35 +216,35 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(lblTipo);
-            panel3.Location = new Point(679, 110);
+            panel3.Location = new Point(500, 152);
             panel3.Name = "panel3";
             panel3.Size = new Size(228, 261);
             panel3.TabIndex = 9;
             // 
             // txtID
             // 
-            txtID.Location = new Point(97, 203);
+            txtID.Location = new Point(18, 47);
             txtID.Name = "txtID";
-            txtID.Size = new Size(100, 23);
+            txtID.Size = new Size(37, 23);
             txtID.TabIndex = 7;
             // 
             // txtInvitado
             // 
-            txtInvitado.Location = new Point(88, 149);
+            txtInvitado.Location = new Point(88, 180);
             txtInvitado.Name = "txtInvitado";
             txtInvitado.Size = new Size(118, 23);
             txtInvitado.TabIndex = 6;
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(88, 106);
+            txtApellidos.Location = new Point(88, 137);
             txtApellidos.Name = "txtApellidos";
             txtApellidos.Size = new Size(118, 23);
             txtApellidos.TabIndex = 5;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(88, 61);
+            txtNombre.Location = new Point(88, 92);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(118, 23);
             txtNombre.TabIndex = 4;
@@ -252,7 +252,7 @@
             // lblInvitado
             // 
             lblInvitado.AutoSize = true;
-            lblInvitado.Location = new Point(13, 157);
+            lblInvitado.Location = new Point(13, 188);
             lblInvitado.Name = "lblInvitado";
             lblInvitado.Size = new Size(69, 15);
             lblInvitado.TabIndex = 3;
@@ -262,7 +262,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 109);
+            label4.Location = new Point(18, 140);
             label4.Name = "label4";
             label4.Size = new Size(62, 15);
             label4.TabIndex = 2;
@@ -271,7 +271,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(18, 64);
+            label3.Location = new Point(18, 95);
             label3.Name = "label3";
             label3.Size = new Size(54, 15);
             label3.TabIndex = 1;
@@ -280,7 +280,7 @@
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(49, 26);
+            lblTipo.Location = new Point(51, 13);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(111, 15);
             lblTipo.TabIndex = 0;
@@ -297,7 +297,7 @@
             btnSalida.FlatStyle = FlatStyle.Flat;
             btnSalida.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalida.ForeColor = Color.FromArgb(3, 52, 149);
-            btnSalida.Location = new Point(542, 393);
+            btnSalida.Location = new Point(747, 296);
             btnSalida.Name = "btnSalida";
             btnSalida.Size = new Size(150, 40);
             btnSalida.TabIndex = 1;
@@ -317,7 +317,7 @@
             btnEntrada.FlatStyle = FlatStyle.Flat;
             btnEntrada.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrada.ForeColor = Color.FromArgb(3, 52, 149);
-            btnEntrada.Location = new Point(729, 393);
+            btnEntrada.Location = new Point(747, 216);
             btnEntrada.Name = "btnEntrada";
             btnEntrada.Size = new Size(150, 40);
             btnEntrada.TabIndex = 0;
@@ -326,28 +326,9 @@
             btnEntrada.UseVisualStyleBackColor = false;
             btnEntrada.Click += btnEntrada_Click;
             // 
-            // buttons1
-            // 
-            buttons1.BackColor = Color.FromArgb(3, 52, 149);
-            buttons1.BackgroundColor = Color.FromArgb(3, 52, 149);
-            buttons1.BorderColor = Color.PaleVioletRed;
-            buttons1.BorderRadius = 20;
-            buttons1.BorderSize = 0;
-            buttons1.FlatAppearance.BorderSize = 0;
-            buttons1.FlatStyle = FlatStyle.Flat;
-            buttons1.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttons1.ForeColor = Color.White;
-            buttons1.Location = new Point(388, 332);
-            buttons1.Name = "buttons1";
-            buttons1.Size = new Size(96, 39);
-            buttons1.TabIndex = 11;
-            buttons1.Text = "Validar codigo";
-            buttons1.TextColor = Color.White;
-            buttons1.UseVisualStyleBackColor = false;
-            // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(229, 105);
+            pictureBox1.Location = new Point(251, 162);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(198, 209);
             pictureBox1.TabIndex = 12;
@@ -355,8 +336,8 @@
             // 
             // btnEscanear
             // 
-            btnEscanear.BackColor = Color.MediumSlateBlue;
-            btnEscanear.BackgroundColor = Color.MediumSlateBlue;
+            btnEscanear.BackColor = Color.CornflowerBlue;
+            btnEscanear.BackgroundColor = Color.CornflowerBlue;
             btnEscanear.BorderColor = Color.PaleVioletRed;
             btnEscanear.BorderRadius = 20;
             btnEscanear.BorderSize = 0;
@@ -364,7 +345,7 @@
             btnEscanear.FlatAppearance.BorderSize = 0;
             btnEscanear.FlatStyle = FlatStyle.Flat;
             btnEscanear.ForeColor = Color.White;
-            btnEscanear.Location = new Point(245, 326);
+            btnEscanear.Location = new Point(283, 384);
             btnEscanear.Name = "btnEscanear";
             btnEscanear.Size = new Size(109, 40);
             btnEscanear.TabIndex = 13;
@@ -381,23 +362,32 @@
             // 
             cboTipo.DropDownStyle = ComboBoxStyle.DropDownList;
             cboTipo.FormattingEnabled = true;
-            cboTipo.Location = new Point(526, 75);
+            cboTipo.Location = new Point(615, 75);
             cboTipo.Name = "cboTipo";
             cboTipo.Size = new Size(282, 23);
             cboTipo.TabIndex = 14;
             cboTipo.SelectedIndexChanged += cboTipo_SelectedIndexChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(488, 76);
+            label5.Name = "label5";
+            label5.Size = new Size(106, 15);
+            label5.TabIndex = 15;
+            label5.Text = "Invitado/Residente";
             // 
             // AccesoPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(919, 445);
+            Controls.Add(label5);
             Controls.Add(cboTipo);
             Controls.Add(btnSalida);
             Controls.Add(btnEscanear);
             Controls.Add(btnEntrada);
             Controls.Add(pictureBox1);
-            Controls.Add(buttons1);
             Controls.Add(panel3);
             Controls.Add(txtCodigo);
             Controls.Add(label2);
@@ -438,11 +428,11 @@
         private TextBox txtNombre;
         private Buttons btnSalida;
         private Buttons btnEntrada;
-        private Buttons buttons1;
         private PictureBox pictureBox1;
         private Buttons btnEscanear;
         private System.Windows.Forms.Timer timer1;
         private TextBox txtID;
         private ComboBox cboTipo;
+        private Label label5;
     }
 }
