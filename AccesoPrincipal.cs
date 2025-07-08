@@ -22,6 +22,7 @@ namespace examen
         private VideoCaptureDevice camara;
         private int idGuardiaActual;
         private DateTime fechaActual;
+
         public AccesoPrincipal(int idGuardia, DateTime fechaActual)
         {
             InitializeComponent();
@@ -141,7 +142,7 @@ namespace examen
                 //int counts = (int)cmdCheck.ExecuteScalar();
                 //if (counts > 0) {
                 
-                string query = "SELECT i.nombre as nombre, i.apellido_paterno as apellido_paterno, i.id_invitado as id_invitado, r.nombre as nombreResidente,CAST(i.fecha AS DATE) AS fechaCodigo FROM Invitados i JOIN Residentes r ON i.id_residente = r.id_residente WHERE i.codigo = @codigo";
+                string query = "SELECT i.nombre as nombre, i.apellido_paterno as apellido_paterno, i.id_invitado as id_invitado, r.nombre as nombreResidente,CAST(i.fecha_validez AS DATE) AS fechaCodigo FROM Invitados i JOIN Residentes r ON i.id_residente = r.id_residente WHERE i.codigo = @codigo";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@codigo", codigo);
 
