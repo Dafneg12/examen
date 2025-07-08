@@ -69,8 +69,7 @@ namespace examen
                 // Pasar el ID y la fecha al formulario principal
                 AccesoPrincipal principal = new AccesoPrincipal(idGuardia, fecha);
                 principal.ShowDialog();
-                this.Hide();
-                
+                this.Close();
             }
             else
             {
