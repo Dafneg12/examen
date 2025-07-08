@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Text.RegularExpressions;
 
+//prueba
 namespace examen
 {
     public partial class crearResidentes : Form
