@@ -153,7 +153,7 @@ namespace examen
                     DateTime fechaCodigo = Convert.ToDateTime(reader["fechaCodigo"]);
                     DateTime fechaHoy = DateTime.Now.Date;
 
-                    if (fechaCodigo != fechaHoy)
+                    if (fechaCodigo.Day != fechaHoy.Day)
                     {
                         MessageBox.Show("Código QR caducado. Solo es válido el día de su generación.");
                         return;
