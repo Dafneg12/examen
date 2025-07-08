@@ -243,7 +243,7 @@ namespace examen
                 else if (lblTipo.Text == "Invitado")
                 {
                     string insert = "INSERT into Accesos(fecha, tipo_acceso, id_invitado, id_guardia) VALUES " +
-                           "(@fecha, @tipo, @idinvitado, @idguardia) WHERE ";
+                           "(@fecha, @tipo, @idinvitado, @idguardia)";
                     cmd.CommandText = insert;
                     cmd.Parameters.AddWithValue("@fecha", fechaActual);
                     cmd.Parameters.AddWithValue("@tipo", "Salida");
@@ -251,7 +251,7 @@ namespace examen
                     cmd.Parameters.AddWithValue("@idguardia", idGuardiaActual);
                 }//final using
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Entrada registrada correctamente.");
+                MessageBox.Show("Salida registrada correctamente.");
             }
         }
 

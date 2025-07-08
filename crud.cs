@@ -136,7 +136,6 @@ namespace examen
                         dataGridView1.Rows.Remove(row);
                     }
                 }
-
                 try
                 {
                     adapter.Update(tablaResidentes);
