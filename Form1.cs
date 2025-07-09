@@ -5,7 +5,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace examen
 {
     public partial class Form1 : Form
-    {
+    {  
         public Form1()
         {
             InitializeComponent();
