@@ -19,10 +19,11 @@ namespace examen
         private SqlConnection connection;
         private int idGuardiaActual;
         private DateTime fechaActual;
-        public crud()
+        public crud(int idGuardia, DateTime fechaActual)
         {
             InitializeComponent();
-            
+            idGuardiaActual = idGuardia;
+            this.fechaActual = fechaActual;
         }
 
 
@@ -46,7 +47,7 @@ namespace examen
         private void btnHistorial_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Historial hist = new Historial();
+            Historial hist = new Historial(idGuardiaActual,fechaActual);
             hist.ShowDialog();
             this.Close();
         }
@@ -54,7 +55,7 @@ namespace examen
         private void btnCrear_Click(object sender, EventArgs e)
         {
             this.Hide();
-            crearResidentes crear = new crearResidentes();
+            crearResidentes crear = new crearResidentes(idGuardiaActual,fechaActual);
             crear.ShowDialog();
             this.Close();
         }
@@ -127,6 +128,7 @@ namespace examen
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
