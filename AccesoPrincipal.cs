@@ -28,7 +28,8 @@ namespace examen
             InitializeComponent();
             lblFecha.Text = DateTime.Now.ToString();
             idGuardiaActual = idGuardia;
-            this.fechaActual = fechaActual;
+            this.fechaActual = (fechaActual < (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue) ? DateTime.Now : fechaActual;
+            CargarComboBox();
         }
 
         private void btnInicios_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace examen
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Historial hist = new Historial();
+            Historial hist = new Historial(idGuardiaActual,fechaActual);
             hist.ShowDialog();
             this.Close();
 
@@ -51,7 +52,7 @@ namespace examen
         private void btnGestionRes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            crud crud = new crud();
+            crud crud = new crud(idGuardiaActual, fechaActual);
             crud.ShowDialog();
             this.Close();
         }
@@ -82,17 +83,23 @@ namespace examen
         {
             if (pictureBox1.Image != null)
             {
-
-                BarcodeReader lector = new BarcodeReader();
-                Result resultado = lector.Decode((Bitmap)pictureBox1.Image);
-                if (resultado != null)
+                try
                 {
-                    txtCodigo.Text = resultado.Text;
-                    timer1.Stop();
-                    camara.SignalToStop();
-                    camara.WaitForStop();
-                    MessageBox.Show("codigo detectado " + resultado.Text);
-                    BuscarBase(resultado.Text);
+                    BarcodeReader lector = new BarcodeReader();
+                    Result resultado = lector.Decode((Bitmap)pictureBox1.Image);
+                    if (resultado != null)
+                    {
+                        txtCodigo.Text = resultado.Text;
+                        timer1.Stop();
+                        camara.SignalToStop();
+                        camara.WaitForStop();
+                        MessageBox.Show("codigo detectado " + resultado.Text);
+                        BuscarBase(resultado.Text);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Vuelva a intentarlo: " + ex.Message);
                 }
             }
         }
@@ -215,8 +222,14 @@ namespace examen
                     cmd.Parameters.AddWithValue("@idinvitado", id);
                     cmd.Parameters.AddWithValue("@idguardia", idGuardiaActual);
                 }//final using
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Entrada registrada correctamente.");
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Entrada registrada correctamente.");
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Error al guardar los datos: " + ex.Message);
+                }
             }
         }
 
@@ -284,7 +297,7 @@ namespace examen
 
         private void AccesoPrincipal_Load(object sender, EventArgs e)
         {
-            CargarComboBox();
+            //CargarComboBox();
         }
 
         private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)

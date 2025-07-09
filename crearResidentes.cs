@@ -18,10 +18,14 @@ namespace examen
     {
         string connectionString = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SistemaAccesos; Integrated Security = True;";
         int idR;
+        private int idGuardiaActual;
+        private DateTime fechaActual;
 
-        public crearResidentes()
+        public crearResidentes(int idGuardia, DateTime fechaActual)
         {
             InitializeComponent();
+            idGuardiaActual = idGuardia;
+            this.fechaActual = fechaActual;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -65,7 +69,7 @@ namespace examen
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            crud gestionResidentes = new crud();
+            crud gestionResidentes = new crud(idGuardiaActual,fechaActual);
             gestionResidentes.ShowDialog();
             this.Close();
         }
