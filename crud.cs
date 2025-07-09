@@ -128,24 +128,62 @@ namespace examen
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
                     if (!row.IsNewRow)
                     {
-                        dataGridView1.Rows.Remove(row);
+                        int idResidente = Convert.ToInt32(row.Cells["id_residente"].Value);
+
+                        try
+                        {
+                            using (SqlConnection conn = new SqlConnection(connectionString))
+                            {
+                                conn.Open();
+
+                                // 0. Eliminar accesos de los invitados del residente
+                                string deleteAccesos = @"DELETE FROM Accesos WHERE id_invitado 
+                                                       IN (SELECT id_invitado FROM Invitados WHERE id_residente = @id)";
+                                using (SqlCommand cmd = new SqlCommand(deleteAccesos, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@id", idResidente);
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                // 1. Eliminar invitados
+                                string deleteInvitados = "DELETE FROM Invitados WHERE id_residente = @id";
+                                using (SqlCommand cmd = new SqlCommand(deleteInvitados, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@id", idResidente);
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                // 2. Eliminar usuario
+                                string deleteUsuario = "DELETE FROM UsuariosResidentes WHERE id_residente = @id";
+                                using (SqlCommand cmd = new SqlCommand(deleteUsuario, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@id", idResidente);
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                // 3. Eliminar residente
+                                string deleteResidente = "DELETE FROM Residentes WHERE id_residente = @id";
+                                using (SqlCommand cmd = new SqlCommand(deleteResidente, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@id", idResidente);
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
+
+                            dataGridView1.Rows.Remove(row); // Elimina de la vista
+                            MessageBox.Show("Residente y datos relacionados eliminados correctamente.");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al eliminar el residente: " + ex.Message);
+                        }
                     }
-                }
-                try
-                {
-                    adapter.Update(tablaResidentes);
-                    MessageBox.Show("Residente eliminado correctamente.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al eliminar el residente: " + ex.Message);
                 }
             }
             else
@@ -153,5 +191,6 @@ namespace examen
                 MessageBox.Show("Selecciona una fila para eliminar.");
             }
         }
+
     }
 }
