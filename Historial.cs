@@ -17,9 +17,11 @@ namespace examen
         private SqlConnection connection;
         private int idGuardiaActual;
         private DateTime fechaActual;
-        public Historial()
+        public Historial(int idGuardia, DateTime fechaActual)
         {
             InitializeComponent();
+            idGuardiaActual = idGuardia;
+            this.fechaActual = fechaActual;
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace examen
         private void btnGestion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            crud gestionResidentes = new crud();
+            crud gestionResidentes = new crud(idGuardiaActual,fechaActual);
             gestionResidentes.ShowDialog();
             this.Close();
         }

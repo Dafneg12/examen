@@ -6,15 +6,12 @@ namespace examen
 {
     public partial class Form1 : Form
     {
+       
         public Form1()
         {
             InitializeComponent();
-            //lblFecha.Text = DateTime.Now.ToString();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            lblFecha.Text = DateTime.Now.ToString();
+            CargarComboBox();
 
         }
         private void CargarComboBox()
@@ -48,8 +45,10 @@ namespace examen
         {
             if (cboGuardia.SelectedIndex > 0)
             {
+                int idGuardia = Convert.ToInt32(cboGuardia.SelectedValue);
+                DateTime fecha = DateTime.Parse(lblFecha.Text);
                 this.Hide();
-                crud gestionResidentes = new crud();
+                crud gestionResidentes = new crud(idGuardia,fecha);
                 gestionResidentes.ShowDialog();
                 this.Close();
             }
@@ -82,8 +81,10 @@ namespace examen
         {
             if (cboGuardia.SelectedIndex > 0)
             {
+                int idGuardia = Convert.ToInt32(cboGuardia.SelectedValue);
+                DateTime fecha = DateTime.Parse(lblFecha.Text);
                 this.Hide();
-                Historial hist = new Historial();
+                Historial hist = new Historial(idGuardia,fecha);
                 hist.ShowDialog();
                 this.Close();
             }
@@ -91,12 +92,6 @@ namespace examen
             {
                 MessageBox.Show("Selecciona un guardia primero.");
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            CargarComboBox();
-            lblFecha.Text = DateTime.Now.ToString();
         }
     }
 }

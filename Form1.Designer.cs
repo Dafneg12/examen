@@ -37,7 +37,6 @@
             btnHistorial = new Buttons();
             pictureBox1 = new PictureBox();
             lblFecha = new Label();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -45,9 +44,9 @@
             // 
             label1.Font = new Font("Candara", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(3, 52, 149);
-            label1.Location = new Point(198, 29);
+            label1.Location = new Point(226, 39);
             label1.Name = "label1";
-            label1.Size = new Size(189, 53);
+            label1.Size = new Size(216, 71);
             label1.TabIndex = 0;
             label1.Text = "Bienvenidos";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -57,19 +56,20 @@
             cboGuardia.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cboGuardia.DropDownStyle = ComboBoxStyle.DropDownList;
             cboGuardia.FormattingEnabled = true;
-            cboGuardia.ItemHeight = 15;
-            cboGuardia.Location = new Point(242, 108);
+            cboGuardia.ItemHeight = 20;
+            cboGuardia.Location = new Point(277, 144);
+            cboGuardia.Margin = new Padding(3, 4, 3, 4);
             cboGuardia.Name = "cboGuardia";
-            cboGuardia.Size = new Size(243, 23);
+            cboGuardia.Size = new Size(277, 28);
             cboGuardia.TabIndex = 1;
             // 
             // label2
             // 
             label2.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(3, 52, 149);
-            label2.Location = new Point(118, 101);
+            label2.Location = new Point(135, 135);
             label2.Name = "label2";
-            label2.Size = new Size(96, 31);
+            label2.Size = new Size(110, 41);
             label2.TabIndex = 2;
             label2.Text = "Guardia";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -85,9 +85,10 @@
             btnAccesoPrincipal.FlatStyle = FlatStyle.Flat;
             btnAccesoPrincipal.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccesoPrincipal.ForeColor = Color.White;
-            btnAccesoPrincipal.Location = new Point(189, 176);
+            btnAccesoPrincipal.Location = new Point(216, 235);
+            btnAccesoPrincipal.Margin = new Padding(3, 4, 3, 4);
             btnAccesoPrincipal.Name = "btnAccesoPrincipal";
-            btnAccesoPrincipal.Size = new Size(227, 49);
+            btnAccesoPrincipal.Size = new Size(259, 65);
             btnAccesoPrincipal.TabIndex = 3;
             btnAccesoPrincipal.Text = "Acceso Principal";
             btnAccesoPrincipal.TextColor = Color.White;
@@ -105,9 +106,10 @@
             btnGestionResidentes.FlatStyle = FlatStyle.Flat;
             btnGestionResidentes.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGestionResidentes.ForeColor = Color.White;
-            btnGestionResidentes.Location = new Point(189, 255);
+            btnGestionResidentes.Location = new Point(216, 340);
+            btnGestionResidentes.Margin = new Padding(3, 4, 3, 4);
             btnGestionResidentes.Name = "btnGestionResidentes";
-            btnGestionResidentes.Size = new Size(227, 49);
+            btnGestionResidentes.Size = new Size(259, 65);
             btnGestionResidentes.TabIndex = 4;
             btnGestionResidentes.Text = "Gestión de residentes";
             btnGestionResidentes.TextColor = Color.White;
@@ -125,9 +127,10 @@
             btnHistorial.FlatStyle = FlatStyle.Flat;
             btnHistorial.Font = new Font("Candara", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHistorial.ForeColor = Color.White;
-            btnHistorial.Location = new Point(189, 337);
+            btnHistorial.Location = new Point(216, 449);
+            btnHistorial.Margin = new Padding(3, 4, 3, 4);
             btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new Size(227, 49);
+            btnHistorial.Size = new Size(259, 65);
             btnHistorial.TabIndex = 5;
             btnHistorial.Text = "Historial de accesos";
             btnHistorial.TextColor = Color.White;
@@ -138,8 +141,9 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 1);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(51, 52);
+            pictureBox1.Size = new Size(58, 69);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
@@ -148,28 +152,18 @@
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Candara", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFecha.ForeColor = Color.FromArgb(3, 52, 149);
-            lblFecha.Location = new Point(447, 9);
+            lblFecha.Location = new Point(511, 12);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(38, 15);
+            lblFecha.Size = new Size(50, 21);
             lblFecha.TabIndex = 7;
             lblFecha.Text = "fecha";
             // 
-            // button1
-            // 
-            button1.Location = new Point(509, 238);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 8;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.GhostWhite;
-            ClientSize = new Size(602, 447);
-            Controls.Add(button1);
+            ClientSize = new Size(688, 596);
             Controls.Add(lblFecha);
             Controls.Add(pictureBox1);
             Controls.Add(btnHistorial);
@@ -178,9 +172,7 @@
             Controls.Add(label2);
             Controls.Add(cboGuardia);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -196,6 +188,5 @@
         private Buttons btnHistorial;
         private PictureBox pictureBox1;
         private Label lblFecha;
-        private Button button1;
     }
 }
